@@ -27,7 +27,7 @@ set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
  # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'
-    blog.sources = 'articles/{year}-{month}-{ay}.html'
+    blog.sources = 'articles/{year}-{month}-{day}.html'
     blog.default_extension = '.md'
     blog.permalink = ':title.html'
     blog.layout = 'layout/article.slim'

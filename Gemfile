@@ -1,27 +1,22 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem "middleman", git: 'https://github.com/middleman/middleman', branch: "master"
-gem "middleman-blog", git: 'https://github.com/epochwolf/middleman-blog', branch: "master"
-gem "middleman-syntax", git: 'https://github.com/middleman/middleman-syntax', branch: "master"
-gem 'middleman-thumbnailer', :git => 'https://github.com/nhemsley/middleman-thumbnailer', branch: "master"
-gem "middleman-livereload"
+gem 'rake'
+gem 'middleman'
+gem 'middleman-blog'
+gem 'middleman-syntax'
 gem 'middleman-search'
-gem "middleman-minify-html"
-gem "middleman-google-analytics"
+gem 'middleman-sprockets'
 
-gem 'execjs'
-gem 'therubyracer'
-gem "flickraw"
-gem "dotenv"
-
-# For feed.xml.builder
-gem "builder", "~> 3.0"
-
-# For article summaries
+gem 'httparty'
+gem 'slim'
+gem 'json'
+gem 'redcarpet'
+gem 'liquid'
 gem 'nokogiri'
-gem "kramdown"
+gem 'therubyracer'
+gem 'builder'
+gem 'ansi'
 
-# External tools that this project uses.
-gem 'rake', require: false
+group :distribution do
+    gem 'html-proofer'
+end

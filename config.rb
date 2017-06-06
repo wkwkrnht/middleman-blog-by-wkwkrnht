@@ -1,9 +1,10 @@
-require "lib/uuid"
+require 'lib/uuid'
+require 'ansi/code'
+require 'slim'
 
 Dotenv.load
-Time.zone = "Tokyo"
+Time.zone = 'Tokyo'
 
-activate :livereload
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 

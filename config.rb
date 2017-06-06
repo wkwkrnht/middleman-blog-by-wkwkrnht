@@ -26,14 +26,15 @@ set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 
  # Blog settings - GLOBAL
 activate :blog do |blog|
-    blog.sources = "articles/:title.html"
-    blog.default_extension = ".markdown"
-    blog.permalink = prefix+":title.html"
-    blog.year_link = prefix+":year.html"
-    blog.month_link = prefix+":year/:month.html"
-    blog.day_link = prefix+":year/:month/:day.html"
-    blog.taglink = prefix+":tag.html"
-    blog.layout = "layout/article.slim"
+    blogprefix = ''
+    blog.sources = 'articles/:title.html'
+    blog.default_extension = '.md'
+    blog.permalink = prefix+':title.html'
+    blog.year_link = prefix+':year.html'
+    blog.month_link = prefix+':year/:month.html'
+    blog.day_link = prefix+':year/:month/:day.html'
+    blog.taglink = prefix+':tag.html'
+    blog.layout = 'layout/article.slim'
     blog.tag_template = "tag."+name+".slim"
     blog.calendar_template = "calendar."+name+".slim"
     blog.name = name

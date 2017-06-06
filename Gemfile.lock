@@ -23,18 +23,18 @@ GIT
   revision: cd60a92d14ccefaeddfeea16bdb6e2dd6a5f7f2e
   branch: master
   specs:
-    middleman (3.1.5)
+    middleman (4.2.1)
       coffee-script (~> 2.2.0)
-      compass (>= 0.12.2)
+      compass (>= 1.0.2)
       execjs (~> 1.4.0)
       haml (>= 3.1.6)
       kramdown (~> 1.2)
-      middleman-core (= 3.1.5)
+      middleman-core (= 4.2.1)
       middleman-more (= 3.1.5)
       middleman-sprockets (>= 3.1.2)
       sass (>= 3.1.20)
       uglifier (~> 2.1.0)
-    middleman-core (3.1.5)
+    middleman-core (4.2.1)
       activesupport (~> 3.2.6)
       bundler (~> 1.1)
       i18n (~> 0.6.1)

@@ -5,8 +5,8 @@ source 'http://rubygems.org'
 gem "middleman", git: 'https://github.com/middleman/middleman', branch: "master"
 gem "middleman-blog", git: 'https://github.com/epochwolf/middleman-blog', branch: "master"
 gem "middleman-syntax", git: 'https://github.com/middleman/middleman-syntax', branch: "master"
-gem 'middleman-thumbnailer', :git => 'git://github.com/nhemsley/middleman-thumbnailer.git', branch: "master"
-gem "middleman-livereload", "~> 3.1.0"
+gem 'middleman-thumbnailer', :git => 'https://github.com/nhemsley/middleman-thumbnailer', branch: "master"
+gem "middleman-livereload"
 gem 'middleman-search'
 gem "middleman-minify-html"
 gem "middleman-google-analytics"

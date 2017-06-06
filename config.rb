@@ -17,22 +17,22 @@ set :css_dir, 'style'
 set :js_dir, 'script'
 
 # set engines, template->slim, markdown->kramdown
-set :slim, :layout_engine => :slim, :format => :html5
+set :slim, :layout_engine => :slim
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
 
 # Create an RFC4122 UUID http://www.ietf.org/rfc/rfc4122.txt
 set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 
- # Blog settings - GLOBAL
+ # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'
     blog.sources = 'articles/:title.html'
     blog.default_extension = '.md'
     blog.permalink = ':title.html'
     blog.layout = 'layout/article.slim'
-    blog.tag_template = "tag.slim"
-    blog.calendar_template = "calendar.slim"
+    blog.tag_template = 'tag.slim'
+    blog.calendar_template = 'calendar.slim'
     blog.name = 'RT狂の思考ログ'
     blog.summary_separator = /\(READMORE\)/
     blog.paginate = false

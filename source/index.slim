@@ -7,10 +7,7 @@ title: RT狂の思考ログ
     p.doc
         == link_to "Read Online Documentation", "http://middlemanapp.com/"
 - blog.articles.each do |article|
-  <article>
-    <h1>
-      <a href="= article.url">= article.title</a>
-      <time>= article.date.strftime('%b %e %Y')</time>
-    </h1>
-  </article>
-end
+  article
+    h1
+      a href=article.url title=article.title article.title
+      time article.date.strftime('%b %e %Y')

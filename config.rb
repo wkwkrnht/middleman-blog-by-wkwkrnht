@@ -68,6 +68,6 @@ configure :build do
     activate :cache_buster
     activate :relative_assets
     activate :google_analytics do |ga|
-        ga.tracking_id = false
+        ga.tracking_id = 'UA-0000000-0'
     end
 end

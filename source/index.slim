@@ -2,23 +2,19 @@ doctype html
 html
     head
         meta charset="utf-8"
-
-        / Always force latest IE rendering engine or request Chrome Frame
         meta content="IE=edge" http-equiv="X-UA-Compatible"
-
-        / Use title if it's in the page YAML frontmatter
         title == data.page.title || "RT狂の思考ログ"
 
         == stylesheet_link_tag "normalize", "all"
         == javascript_include_tag  "all"
 
-    body class="#{page_classes}"
+    body
         .welcome
             h1 Middleman is Watching
             p.doc
-                = link_to "Read Online Documentation", "http://middlemanapp.com/"
+                == link_to "Read Online Documentation", "http://middlemanapp.com/"
         - blog.articles.each do |article|
             article
                 h1
-                    = link_to article.url, article.title
-                time = article.date.strftime('%b %e %Y')
+                    == link_to article.url, article.title
+                time == article.date.strftime('%b %e %Y')

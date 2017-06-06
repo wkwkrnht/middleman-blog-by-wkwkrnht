@@ -42,8 +42,7 @@ activate :blog do |blog|
 end
 
 activate :search do |search|
-    # I only want to search blog articles, not about/ or books/ or anything.
-    search.resources = ['blog/']
+    search.resources = ['/']
 
     # Search fields are indexed by default, but not stored. Storing takes up
     # space, so we should only store what is needed to render search results: the

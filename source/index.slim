@@ -6,15 +6,11 @@ title: RT狂の思考ログ
     h1 Middleman is Watching
     p.doc
         == link_to "Read Online Documentation", "http://middlemanapp.com/"
-<% blog.articles.each do |article| %>
+- blog.articles.each do |article|
   <article>
     <h1>
-      <a href="<%= article.url %>"><%= article.title %></a>
-      <time><%= article.date.strftime('%b %e %Y') %></time>
+      <a href="= article.url">= article.title</a>
+      <time>= article.date.strftime('%b %e %Y')</time>
     </h1>
-
-    <%= article.summary %>
-
-    <a href="<%= article.url %>">もっと読む</a>
   </article>
-<% end %>
+end

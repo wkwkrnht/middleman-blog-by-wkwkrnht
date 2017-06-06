@@ -29,15 +29,11 @@ activate :blog do |blog|
     blog.prefix = 'blog'
     blog.sources = 'articles/:title.html'
     blog.default_extension = '.md'
-    blog.permalink = prefix+':title.html'
-    blog.year_link = prefix+':year.html'
-    blog.month_link = prefix+':year/:month.html'
-    blog.day_link = prefix+':year/:month/:day.html'
-    blog.taglink = prefix+':tag.html'
+    blog.permalink = ':title.html'
     blog.layout = 'layout/article.slim'
-    blog.tag_template = "tag."+name+".slim"
-    blog.calendar_template = "calendar."+name+".slim"
-    blog.name = name
+    blog.tag_template = "tag.slim"
+    blog.calendar_template = "calendar.slim"
+    blog.name = 'RT狂の思考ログ'
     blog.summary_separator = /\(READMORE\)/
     blog.paginate = false
 end
@@ -62,14 +58,6 @@ ignore "/tag.slim"
 ignore "/calendar.slim"
 
 page "/sitemap.xml", :layout => "sitemap.xml"
-
-
-configure :development do
-  activate :google_analytics do |ga|
-    ga.tracking_id = false
-  end
-end
-
 
 # Build-specific configuration
 configure :build do

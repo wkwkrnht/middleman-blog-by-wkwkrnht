@@ -134,6 +134,11 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-google-analytics (3.0.0)
+        activesupport(<5.1, >= 4.1)
+        erubis(>= 0)
+        middleman-core (>= 3.4)
+        uglifier (< 4.0, >=2.5)
     middleman-search (0.8.0)
       middleman-core (>= 3.2)
       nokogiri (~> 1.6)

@@ -53,6 +53,17 @@ activate :search do |search|
     }
 end
 
+def get_bcr
+    out_bcr = [current_page]
+    the_page = current_page
+    while the_page.parent
+        the_parent = the_page.parent
+        out_bcr.push(the_parent)
+        the_page = the_parent
+    end
+    out_bcr.reverse
+end
+
 # Ignore Blog Templates
 ignore "/tag.slim"
 ignore "/calendar.slim"

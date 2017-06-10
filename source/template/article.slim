@@ -9,10 +9,19 @@ html lang=ja
         / Use title if it's in the page YAML frontmatter
         title == data.page.title || 'RT狂の思考ログ'
 
-        == stylesheet_link_tag 'initial', 'post'
-        / == javascript_include_tag  'all'
+        == stylesheet_link_tag 'post'
+        == javascript_include_tag  'all'
 
     body class="#{page_classes}"
+        header
+        .breadcrumbs
+            - get_bcr.each_with_index do |val, index|
+                - if index > 0
+                    span >
+                    - if val == current_page
+                        span = val.data.title
+                    - else
+                        = link_to "#{val.data.title}", "#{val.url}", class: "test"
         article
             header
             div.article-main role=main

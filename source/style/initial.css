@@ -1,4 +1,4 @@
-/*:root{
+html{
     color:#333;
     font:400 62.5%/1.9 -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;
     font-feature-settings:"pkna" on;
@@ -82,17 +82,11 @@ img{
     image-rendering:pixelated;
     object-fit:contain;
 }
-img[src$=".gif"],img[src$=".png"]{
-    image-rendering:-moz-crisp-edges;
-    image-rendering:-o-crisp-edges;
-    image-rendering:-webkit-optimize-contrast;
-    image-rendering:crisp-edges;
-}
 svg:not(:root){
     overflow:hidden;
 }
 code,kbd,pre,samp{
-    font-family:monospace,monospace;
+    font-family:monospace;
     font-size:1em;
 }
 pre{
@@ -166,4 +160,4 @@ textarea{
 ::-webkit-file-upload-button{
     -webkit-appearance:button;
     font:inherit;
-}*/
+}

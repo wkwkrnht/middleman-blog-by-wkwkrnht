@@ -27,10 +27,10 @@ set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
  # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'
-    blog.sources = 'articles/:title.html'
     blog.default_extension = '.md'
+    blog.sources = 'articles/:title.html'
     blog.permalink = ':title.html'
-    blog.layout = 'layout/article.slim'
+    blog.layout = 'template/article.slim'
     blog.tag_template = 'tag.slim'
     blog.calendar_template = 'calendar.slim'
     blog.name = 'RT狂の思考ログ'

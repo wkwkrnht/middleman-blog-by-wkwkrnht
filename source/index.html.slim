@@ -5,10 +5,10 @@ header.site-header
 
 div.card-list
     - page_articles.each_with_index do |article, i|
-        a href=(article.url) class='card article-card'
+        a href==@article.url class='card article-card'
             div.card-meta
                 h2
-                    = article.title 
+                    = @article.title 
                 span
                     time
-                        = article.date.strftime('%Y-%m-%d')
+                        = @article.date.strftime('%Y-%m-%d')

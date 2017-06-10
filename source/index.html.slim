@@ -1,33 +1,21 @@
---
-title: RT狂の思考ログ
---
-
-.welcome
+header.site-header
   h1 Middleman is Watching
   p.doc
     == link_to "Read Online Documentation", "http://middlemanapp.com/"
 
 div
     - page_articles.each_with_index do |article, i|
-        div
-            h2
-                == link_to article.title, article.url
-            p
-                = strip_tags article.summary(100)
-            p
-                time
-                    = article.date.strftime('%Y-%m-%d')
+        a href=(article.url)
+            div
+                h2
+                    == article.title, 
+                span
+                    time
+                        = article.date.strftime('%Y-%m-%d')
 
-/ aside class="widget tag-widget"
+/aside class='widget tag-widget'
 /    h2 タグ
 /    ul
 /        - blog.tags.each do |tag, articles|
 /            li
-/                 == link_to tag（articles.size）, tag_path(tag)
-
-/ aside class="widget year-widget"
-/    h2 投稿年
-/    ul
-/       - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-/            li
-/                == link_to year（articles.size）, blog_year_path(year)
+/                == link_to tag（articles.size）, tag_path(tag)

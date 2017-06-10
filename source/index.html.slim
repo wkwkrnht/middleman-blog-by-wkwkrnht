@@ -1,27 +1,32 @@
+--
+--
+
 .welcome
   h1 Middleman is Watching
   p.doc
     == link_to "Read Online Documentation", "http://middlemanapp.com/"
 
-page_articles.each_with_index do |article, i| %>
 div
-    h2 == link_to article, article.title
-    p
-        == strip_tags article.summary(100)
-    p
-        time date="== article.date.strftime('%Y-%m-%d')"
-            == article.date.strftime('%Y-%m-%d')
+    - page_articles.each_with_index do |article, i|
+        div
+            h2
+                == link_to article.title, article.url
+            p
+                == strip_tags article.summary(100)
+            p
+                time
+                    == article.date.strftime('%Y-%m-%d')
 
 / aside class="widget tag-widget"
 /    h2 タグ
 /    ul
-/        blog.tags.each do |tag, articles|
+/        - blog.tags.each do |tag, articles|
 /            li
-/                == tag(== articles.size), == link_to tag_path(tag)
+/                 == link_to tag（articles.size）, tag_path(tag)
 
 / aside class="widget year-widget"
 /    h2 投稿年
 /    ul
-/        blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+/       -  blog.articles.group_by {|a| a.date.year }.each do |year, articles|
 /            li
-/                == link_to == year(== articles.size), blog_year_path(year)
+/                == link_to year（articles.size）, blog_year_path(year)

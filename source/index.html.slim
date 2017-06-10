@@ -4,7 +4,7 @@ header.site-header
     == link_to "Read Online Documentation", "http://middlemanapp.com/"
 
 div.card-list
-    - blog.articles.each_with_index do |article, i|
+    - page_articles.each_with_index do |article, i|
         a href= ( @article.url ) class="card article-card"
             div.card-meta
                 h2
@@ -16,6 +16,6 @@ div.card-list
 aside class='widget tag-widget'
     h2 タグ
     ul
-        - blog.tags.each do |tag, articles|
+        - page_articles.tags.each_with_index do |tag, articles, i|
             li
-                == link_to tag（articles.size）, tag_path(tag)
+                == link_to @tag（@articles.size）, tag_path(@tag)

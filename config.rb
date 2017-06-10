@@ -5,7 +5,6 @@ require 'slim'
 Dotenv.load
 Time.zone = 'Tokyo'
 
-activate :directory_indexes
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 
@@ -29,7 +28,7 @@ set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 activate :blog do |blog|
     blog.prefix = 'blog'
     blog.default_extension = '.md'
-    blog.sources = 'articles/:title'
+    blog.sources = 'articles/:title.md'
     blog.permalink = ':title.html'
     blog.layout = 'template/article.slim'
     blog.tag_template = 'tag.slim'

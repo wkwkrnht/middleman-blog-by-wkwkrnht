@@ -1,7 +1,3 @@
----
-title: Welcome to Middleman
----
-
 .welcome
   h1 Middleman is Watching
   p.doc
@@ -16,16 +12,16 @@ div
         time date="== article.date.strftime('%Y-%m-%d')"
             == article.date.strftime('%Y-%m-%d')
 
-aside class="widget tag-widget"
-    h2 タグ
-    ul
-        blog.tags.each do |tag, articles|
-            li
-                == tag(== articles.size), == link_to tag_path(tag)
+/ aside class="widget tag-widget"
+/    h2 タグ
+/    ul
+/        blog.tags.each do |tag, articles|
+/            li
+/                == tag(== articles.size), == link_to tag_path(tag)
 
-aside class="widget year-widget"
-    h2 投稿年
-    ul
-        blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-            li
-                == link_to == year(== articles.size), blog_year_path(year)
+/ aside class="widget year-widget"
+/    h2 投稿年
+/    ul
+/        blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+/            li
+/                == link_to == year(== articles.size), blog_year_path(year)

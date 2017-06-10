@@ -5,12 +5,13 @@ require 'slim'
 Dotenv.load
 Time.zone = 'Tokyo'
 
+activate :directory_indexes
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 
 set :layout, :_auto_layout
 set :layouts_dir, 'template'
-set :helpers_dir, 'helpers'
+set :helpers_dir, 'helper'
 set :locales_dir, 'locale'
 set :images_dir, 'img'
 set :css_dir, 'style'

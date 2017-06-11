@@ -4,7 +4,7 @@ html lang='ja'
         meta charset='utf-8'
         meta content="IE=edge" http-equiv="X-UA-Compatible"
         meta name='viewport' content='width=device-width initial-scale=1'
-        title = html_title(current_article, current_resource)
+        title == data.page.title || 'RT狂の思考ログ'
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/list.css');

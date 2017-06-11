@@ -1,8 +1,8 @@
-ul
-  - blog.articles.group_by {|a| a.date.year }.each do |year, article|
-    li
-      = link_to article.year, year
-      ul
-        - articles.each do |article|
-          li
-            = link_to article.url, article.title
+/ul
+/    - blog.articles.group_by {|a| a.date.year }.each do |year, article|
+/        li
+/            = link_to article.year, year
+/            ul
+/                - articles.each do |article|
+/                    li
+/                        = link_to article.url, article.title

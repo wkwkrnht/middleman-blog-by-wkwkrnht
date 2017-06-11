@@ -31,8 +31,8 @@ activate :blog do |blog|
     blog.sources = 'articles/:title.html'
     blog.permalink = ':title.html'
     blog.layout = 'template/article'
-    blog.tag_template = 'template/tag.html'
-    blog.calendar_template = 'template/calendar.html'
+    blog.tag_template = 'template/tag.html.slim'
+    blog.calendar_template = 'template/calendar.html.slim'
     blog.name = 'RT狂の思考ログ'
     blog.summary_separator = /\(READMORE\)/
     blog.paginate = false

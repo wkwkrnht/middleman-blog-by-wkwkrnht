@@ -1,7 +1,18 @@
-@import '_variable';
+@import 'variable';
 :root{
     color:$txt-base;
-    font:400 62.5%/1.9 -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo","sans-serif";
+    font:{
+        size:{
+            400;
+        }
+        size:{
+            62.5%;
+        }
+        family:{
+            -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;
+        }
+    }
+    line-height:1.9;
     font-feature-settings:"pkna" on;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -87,7 +98,7 @@ svg:not(:root){
     overflow:hidden;
 }
 code,kbd,pre,samp{
-    font-family:"monospace";
+    font-family:monospace;
     font-size:1em;
 }
 pre{

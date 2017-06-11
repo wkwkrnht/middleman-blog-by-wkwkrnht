@@ -1,4 +1,4 @@
-@include _variable
+@import '_variable';
 :root{
     color:$txt-base;
     font:400 62.5%/1.9 -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;

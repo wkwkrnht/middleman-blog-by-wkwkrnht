@@ -30,7 +30,7 @@ activate :blog do |blog|
     blog.default_extension = '.md'
     blog.sources = 'articles/:title.html'
     blog.permalink = ':title.html'
-    blog.layout = 'template/article'
+    blog.layout = 'article.slim'
     blog.tag_template = 'tag.slim'
     blog.calendar_template = 'calendar.slim'
     blog.name = 'RT狂の思考ログ'

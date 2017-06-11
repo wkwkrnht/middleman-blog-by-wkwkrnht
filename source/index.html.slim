@@ -1,14 +1,23 @@
-header.site-header
-  h1 Middleman is Watching
-  p
-    == link_to "Read Online Documentation", "http://middlemanapp.com/"
-
-div.card-list
-    - page_articles.each_with_index do |article, i|
-        a href=@article.url class='card article-card'
-            div.card-meta
-                h2
-                    = @article.title 
-                span
-                    time
-                        = @article.date.strftime('%Y-%m-%d')
+doctype html
+html
+    head
+        meta charset='utf-8'
+        meta content="IE=edge" http-equiv="X-UA-Compatible"
+        meta name='viewport' content='width=device-width initial-scale=1'
+        = javascript_inline_tag 'loadCSS'
+        javascript:
+            loadCSS('/style/list.css');
+    body
+        header.site-header
+          h1 Middleman is Watching
+          p
+            == link_to "Read Online Documentation", "http://middlemanapp.com/"
+        main.card-list
+            - page_articles.each_with_index do |article, i|
+                a href=@article.url class='card article-card'
+                    div.card-meta
+                        h2
+                            = @article.title 
+                        span
+                            time
+                                = @article.date.strftime('%Y-%m-%d')

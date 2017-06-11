@@ -1,29 +1,25 @@
 doctype html
-html lang=ja
+html lang='ja'
     head
-        meta charset="utf-8"
-
-        / Always force latest IE rendering engine
+        meta charset='utf-8'
         meta content="IE=edge" http-equiv="X-UA-Compatible"
-
-        / Use title if it's in the page YAML frontmatter
-        title == data.page.title || 'RT狂の思考ログ'
-
-        == stylesheet_link_tag 'post'
-        == javascript_include_tag  'all'
-
+        meta name='viewport' content='width=device-width initial-scale=1'
+        title =html_title(current_article, current_resource)
+        = javascript_inline_tag 'loadCSS'
+        javascript:
+            loadCSS('/style/post.css');
     body class="#{page_classes}"
         header
-        .breadcrumbs
-            - get_bcr.each_with_index do |val, index|
-                - if index > 0
-                    span >
-                    - if val == current_page
-                        span = val.data.title
-                    - else
-                        = link_to "#{val.data.title}", "#{val.url}", class: "test"
+            .breadcrumbs
+                - get_bcr.each_with_index do |val, index|
+                    - if index > 0
+                        span >
+                        - if val == current_page
+                            span = val.data.title
+                        - else
+                            = link_to "#{val.data.title}", "#{val.url}", class: "test"
         article
             header
-            div.article-main role=main
+            div.article-main role='main'
                 == yield
             footer

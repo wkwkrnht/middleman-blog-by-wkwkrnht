@@ -1,5 +1,6 @@
-/*html{
-    color:#333;
+@include _variable
+:root{
+    color:$txt-base;
     font:400 62.5%/1.9 -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;
     font-feature-settings:"pkna" on;
     -webkit-font-smoothing:antialiased;
@@ -35,7 +36,7 @@ a{
     text-decoration:none;
 }
 a,a:visited,a:active{
-    color:#03a9f4;
+    color:$link-color;
 }
 a:active,a:hover{
     outline-width:0;
@@ -160,4 +161,4 @@ textarea{
 ::-webkit-file-upload-button{
     -webkit-appearance:button;
     font:inherit;
-}*/
+}

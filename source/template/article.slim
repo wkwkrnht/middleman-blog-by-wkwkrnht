@@ -4,7 +4,7 @@ html lang='ja'
         meta charset='utf-8'
         meta content="IE=edge" http-equiv="X-UA-Compatible"
         meta name='viewport' content='width=device-width initial-scale=1'
-        title == current_page.page.title || 'RT狂の思考ログ'
+        title == current_page.data.title || 'RT狂の思考ログ'
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/post.css');
@@ -21,7 +21,7 @@ html lang='ja'
         article
             header
                 h1
-                    == current_page.page.title
+                    == current_page.data.title
             div.article-main role='main'
                 == yield
             footer

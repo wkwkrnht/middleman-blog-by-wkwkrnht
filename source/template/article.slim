@@ -5,7 +5,7 @@ html lang='ja'
         meta content="IE=edge" http-equiv="X-UA-Compatible"
         meta name='viewport' content='width=device-width initial-scale=1'
         title =html_title(current_article, current_resource)
-        = javascript_inline_tag 'loadCSS'
+        = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/post.css');
     body class="#{page_classes}"

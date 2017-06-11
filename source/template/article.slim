@@ -9,15 +9,6 @@ html lang='ja'
         javascript:
             loadCSS('/style/post.css');
     body class="#{page_classes}"
-        header
-            .breadcrumbs
-                - get_bcr.each_with_index do |val, index|
-                    - if index > 0
-                        span >
-                        - if val == current_page
-                            span = val.data.title
-                        - else
-                            = link_to "#{val.data.title}", "#{val.url}", class: "test"
         article
             header
                 h1

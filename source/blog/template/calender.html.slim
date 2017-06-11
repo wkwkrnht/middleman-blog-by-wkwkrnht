@@ -1,5 +1,5 @@
 ul
-  - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+  - blog.articles.group_by {|a| a.date.year }.each do |year, article|
     li
       = link_to article.year, year
       ul

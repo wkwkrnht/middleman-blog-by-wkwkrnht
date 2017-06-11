@@ -20,6 +20,8 @@ html lang='ja'
                             = link_to "#{val.data.title}", "#{val.url}", class: "test"
         article
             header
+                h1
+                    == data.page.tile
             div.article-main role='main'
                 == yield
             footer

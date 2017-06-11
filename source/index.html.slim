@@ -10,9 +10,14 @@ html lang='ja'
             loadCSS('/style/list.css');
     body
         header.site-header
-          h1 Middleman is Watching
-          p
-            == link_to "Read Online Documentation", "http://middlemanapp.com/"
+            h1 Middleman is Watching
+            span
+                span
+                    | 2017
+                span
+                    &copy;
+                span
+                    | RT狂の思考ログ
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a href='#{article.url}' class='card article-card' title=article.title 

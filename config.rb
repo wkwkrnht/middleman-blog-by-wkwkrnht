@@ -32,7 +32,7 @@ activate :blog do |blog|
     blog.permalink = ':title.html'
     blog.layout = 'template/article'
     blog.tag_template = 'blog/template/tag.html'
-    blog.calendar_template = 'blog/template/calendar.html'
+    blog.calendar_template = 'blog/template/calender.html'
     blog.name = 'RT狂の思考ログ'
     blog.summary_separator = /\(READMORE\)/
     blog.paginate = false

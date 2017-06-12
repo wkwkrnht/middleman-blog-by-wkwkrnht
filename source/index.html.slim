@@ -23,14 +23,14 @@ html lang='ja'
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 
                     -if article.metadata[:eyecatch].present?
-                        article.eyecatch = '/img/no-img/512X512.png'
+                        eyecatch = '/img/no-img/512X512.png'
                     -else
                         -if article.metadata.eyecatch != ''
-                            article.eyecatch = article.metadata.eyecatch
+                            eyecatch = article.metadata.eyecatch
                         -else
-                            article.eyecatch = '/img/no-img/512X512.png'
+                            eyecatch = '/img/no-img/512X512.png'
                     end
-                    =image_tag article.eyecatch, :alt=>'eyecatch', :class=>'card-img'
+                    =image_tag @eyecatch, :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2
                             = article.title 

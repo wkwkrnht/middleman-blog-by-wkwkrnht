@@ -1,18 +1,6 @@
-@import 'variable';
 :root{
-    color:$txt-base;
-    font:{
-        size:{
-            400;
-        }
-        size:{
-            62.5%;
-        }
-        family:{
-            -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;
-        }
-    }
-    line-height:1.9;
+    color:#333;
+    font:400 62.5%/1.9 -apple-system,"Lucida Grande","Helvetica Neue","Hiragino Kaku Gothic ProN","游ゴシック","メイリオ","Meiryo",sans-serif;
     font-feature-settings:"pkna" on;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -47,7 +35,7 @@ a{
     text-decoration:none;
 }
 a,a:visited,a:active{
-    color:$link-color;
+    color:#03a9f4;
 }
 a:active,a:hover{
     outline-width:0;

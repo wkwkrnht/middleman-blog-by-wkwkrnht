@@ -22,7 +22,7 @@ html lang='ja'
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 
-                    -if article.metadata.eyecatch.present?
+                    -if article.metadata[:eyecatch].present?
                         article.eyecatch = '/img/no-img/512X512.png'
                     -else
                         -if article.metadata.eyecatch != ''

@@ -11,9 +11,17 @@ html lang='ja'
             loadCSS('/style/post.css');
     body class="#{page_classes}"
         article
-            header
-                h1
-                    == current_page.title
+            header.article-header
+                .article-meta
+                    h1.article-title
+                        == current_page.title
             div.article-main role='main'
                 == yield
-            footer
+            footer.article-footer
+                span.copyright
+                    span
+                        | 2017
+                    span
+                        | &copy;
+                    span
+                        | RT狂の思考ログ

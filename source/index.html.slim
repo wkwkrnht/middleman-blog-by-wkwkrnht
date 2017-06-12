@@ -21,10 +21,16 @@ html lang='ja'
                     | RT狂の思考ログ
         main.card-list
             - page_articles.each_with_index do |article, i|
-                a href='#{article.url}' class='box-card' title=article.title 
+                a.box-card href='#{article.url}' title=article.title 
+                    -if article.eyecatch != ''
+                        article.eyecatch = article.eyecatch
+                    -else
+                        article.eyecatch = '/img/no-img/512X512.png'
+                    end
+                    =image_tag article.eyecatch, :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2
                             = article.title 
-                        span
+                        div
                             time
                                 = article.date.strftime('%Y-%m-%d')

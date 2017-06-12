@@ -165,3 +165,7 @@ textarea{
 ::-webkit-file-upload-button{
     -webkit-appearance:button;
 }
+
+span[itemprop*="copyrightHolder"] span[itemprop*="name"]{
+    font-weight:bold;
+}

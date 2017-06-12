@@ -22,15 +22,14 @@ html lang='ja'
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 
-                    -if article.metadata[:eyecatch].present?
-                        eyecatch = '/img/no-img/512X512.png'
-                    -else
-                        -if article.metadata.eyecatch != ''
-                            eyecatch = article.metadata.eyecatch
-                        -else
-                            eyecatch = '/img/no-img/512X512.png'
-                    end
-                    =image_tag @eyecatch, :alt=>'eyecatch', :class=>'card-img'
+                    /-if article.metadata[:eyecatch].present?
+                    /    eyecatch = '/img/no-img/512X512.png'
+                    /-else
+                    /    -if article.metadata.eyecatch != ''
+                    /        eyecatch = article.metadata.eyecatch
+                    /    -else
+                    /        eyecatch = '/img/no-img/512X512.png'
+                    /=image_tag @eyecatch, :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2
                             = article.title 

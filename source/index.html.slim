@@ -22,7 +22,7 @@ html lang='ja'
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 
-                    = image_tag article.metadata.eyecatch ? article.metadata.eyecatch : '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
+                    = image_tag article.metadata[:locals]['eyecatch'] ? article.metadata[:locals]['eyecatch'] : '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2
                             = article.title 

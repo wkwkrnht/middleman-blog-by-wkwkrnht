@@ -1,7 +1,7 @@
 -if current_page.data.eyecatch.present?
-    eyecatch = '/img/no-img/512X512.png'
+    - eyecatch = '/img/no-img/512X512.png'
 -else
-    eyecatch = current_page.data.eyecatch
+    - eyecatch = current_page.data.eyecatch
 doctype html
 html lang='ja'
     head
@@ -13,10 +13,10 @@ html lang='ja'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-    body class="#{page_classes}"
+    body class='#{page_classes}'
         article
             header.article-header
-                =image_tag '#{eyecatch}', :alt=>'eyecatch', :class=>'article-eycatch'
+                = image_tag eyecatch, :alt=>'eyecatch', :class=>'article-eyecatch'
                 .article-meta
                     h1.article-title
                         == current_page.title

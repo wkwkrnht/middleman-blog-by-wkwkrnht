@@ -12,7 +12,7 @@ html lang='ja'
     body class='#{page_classes}'
         article
             header.article-header
-                = image_tag current_page.data.eyecatch ? current_page.data.eyecatch : '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'article-eyecatch'
+                = image_tag current_page.data.eyecatch ? current_page.data.eyecatch : '/img/no-img/full.png', :alt=>'eyecatch', :class=>'article-eyecatch'
                 .article-meta
                     h1.article-title
                         == current_page.title

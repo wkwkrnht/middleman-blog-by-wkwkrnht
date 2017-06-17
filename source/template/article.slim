@@ -4,7 +4,15 @@ html lang='ja'
         meta charset='utf-8'
         meta content='IE=edge' http-equiv='X-UA-Compatible'
         meta name='viewport' content='width=device-width initial-scale=1'
-        title == current_page.data.title || 'RT狂の思考ログ'
+        meta name='renderer' content='webkit'
+        meta name='HandheldFriendly' content='true'
+        meta name='description' content=current_page.data.description || 'RT狂の思考ログ'
+        meta property='og:type' content='article'
+        /meta property='og:url' content=URI.join(Middleman::sitemap_ping::Helper.config.host, URI.encode(current_resource.url))
+        meta property='og:description' content=current_page.data.description || 'RT狂の思考ログ'
+        meta property='og:site_name' content=current_page.title || 'RT狂の思考ログ'
+        meta property='og:image' content=current_page.data.eyecatch || '/img/no-img/256x256.png'
+        title == current_page.title || 'RT狂の思考ログ'
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
@@ -12,7 +20,7 @@ html lang='ja'
     body class='#{page_classes}'
         article
             header.article-header
-                = image_tag current_page.data.eyecatch ? current_page.data.eyecatch : '/img/no-img/full.png', :alt=>'eyecatch', :class=>'article-eyecatch'
+                = image_tag current_page.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch', :class=>'article-eyecatch'
                 .article-meta
                     h1.article-title
                         == current_page.title
@@ -24,6 +32,14 @@ html lang='ja'
             div.article-main role='main'
                 == yield
             footer.article-footer
+                aside.related-entry
+                    h2 関連記事
+                    div
+                        - similar_articles.first(5).each do|article|
+                            = link_to article.url do
+                                img src=article.eyecatch || '/img/no-img/512x512.png' alt='eyecatch'
+                                div
+                                    h3 = article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

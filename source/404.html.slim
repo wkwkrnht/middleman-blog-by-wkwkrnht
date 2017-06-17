@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        meta charset='utf-8'
+        meta content='IE=edge' http-equiv='X-UA-Compatible'
+        meta name='viewport' content='width=device-width initial-scale=1'
+        title 404 page - RT狂の思考ログ
+        = javascript_include_tag 'loadCSS'
+        javascript:
+            loadCSS('/style/base.css');
+            loadCSS('/style/404.css');
+    body
+        main
+            section
+                div
+                    input.form-control#search type='text' placeholder='Search for...'
+                    .input-group-addon#search-result-group
+                        i.fa.fa-circle-o-notch.fa-spin.fa-fw
+                .search-results

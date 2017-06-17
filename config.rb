@@ -24,6 +24,10 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 # Create an RFC4122 UUID http://www.ietf.org/rfc/rfc4122.txt
 set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 
+activate :asset_hash do |asset_hash|
+    asset_hash.exts << '.json'
+end
+
  # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'
@@ -39,7 +43,8 @@ activate :blog do |blog|
 end
 
 activate :search do |search|
-    search.resources = ['/']
+    search.resources = ['index.html', 'articles/']
+    search.language = 'ja'
 
     # Search fields are indexed by default, but not stored. Storing takes up
     # space, so we should only store what is needed to render search results: the
@@ -53,17 +58,36 @@ activate :search do |search|
     }
 end
 
-page "/sitemap.xml", :layout => "sitemap.xml"
+activate :sitemap_ping do |config|
+    config.host         = 'http://example.com' # (required) Host of your website
+end
 
-# Build-specific configuration
+activate :robots,
+    :rules => [
+        {
+            :user_agent => 'Googlebot',
+            :allow => %w(/),
+            :disallow => %w(404.html)
+        },
+        {
+            :user_agent => 'Googlebot-Image',
+            :allow => %w(/),
+            :disallow => %w(404.html)
+        },
+        {
+            :user_agent => '*',
+            :allow => %w(/)
+        }
+    ],
+    :sitemap => "http://example.com/sitemap.xml"
+end
+
 configure :build do
-  # activate :minify_html
+    activate :minify_html
     activate :gzip
     activate :minify_css
     activate :minify_javascript
     activate :cache_buster
     activate :relative_assets
-    activate :google_analytics do |ga|
-        ga.tracking_id = 'UA-0000000-0'
-    end
+    activate :similar
 end

@@ -85,22 +85,21 @@ article{
     background-color:#03a9f4;
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     color:#fff;
-}
-.article-main h2 > a:visited{
-    color:#fff;
+    & > a:visited{
+        color:#fff;
+    }
 }
 .article-main h3{
     border:1vmin solid #03a9f4;
     box-shadow:0 0 3vmin rgba(0,0,0,.1);
     color:#03a9f4;
-}
-.article-main h3 > a:visited{
-    color:#03a9f4;
+    & > a:visited{
+        color:#03a9f4;
+    }
 }
 .article-main h4{
-    border-bottom:1px solid;
-    border-color:#03a9f4;
-    border-left:.5em solid;
+    border-bottom:1px solid #03a9f4;
+    border-left:.5em solid #03a9f4;
 }
 .article-main h5{
     border-left:.5em solid #03a9f4;
@@ -130,15 +129,15 @@ article{
     border:1px solid #bbb;
     border-radius:3vmin;
     padding:1em 2em;
-}
-.article-main blockquote[title]::after{
-    content:attr(title);
-}
-.article-main blockquote[cite]::after{
-    content:attr(cite);
-}
-.article-main blockquote[title][cite]::after{
-    content:attr(title)"\a" attr(cite);
+    &[title]::after{
+        content:attr(title);
+    }
+    &[cite]::after{
+        content:attr(cite);
+    }
+    &[title][cite]::after{
+        content:attr(title)"\a" attr(cite);
+    }
 }
 .article-main blockquote[title]::after,.article-main blockquote[cite]::after,.article-main blockquote[title][cite]::after{
     border-top:1px solid #bbb;
@@ -159,9 +158,9 @@ article{
     margin:4vh auto;
     width:80vw;
 }
-.article-main p iframe[src*="youtu.be"],
-.article-main p iframe[src*="youtube.com"],
-.article-main p iframe[src*="www.youtube.com"]{
+.article-main * iframe[src*="youtu.be"],
+.article-main * iframe[src*="youtube.com"],
+.article-main * iframe[src*="www.youtube.com"]{
     height:calc(80vw / 100 * 56.25);
     margin:4vh 0;
     max-height:calc(720px / 100 * 56.25);
@@ -193,6 +192,7 @@ article{
 }
 .article-main ol{
     counter-reset:counter-name;
+    margin:2em auto;
     & li{
         list-style:none;
         margin:0;

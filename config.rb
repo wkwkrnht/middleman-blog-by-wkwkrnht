@@ -49,7 +49,7 @@ activate :search do |search|
 end
 
 activate :sitemap_ping do |config|
-    config.host         = 'http://example.com' # (required) Host of your website
+    config.host         = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
 end
 
 activate :robots,
@@ -69,7 +69,7 @@ activate :robots,
             :allow => %w(/)
         }
     ],
-    :sitemap => "http://example.com/sitemap.xml"
+    :sitemap => "https://middleman-by-wkwkrnht.netlify.com/sitemap.xml"
 
 configure :build do
     activate :minify_html

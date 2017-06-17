@@ -40,12 +40,6 @@ end
 
 activate :search do |search|
     search.resources = ['index.html', 'articles/']
-    search.language = 'ja'
-
-    # Search fields are indexed by default, but not stored. Storing takes up
-    # space, so we should only store what is needed to render search results: the
-    # title, the date, and the URL. We'll index the content but no store it.
-    # Additionally, we apply a "boost" to the title and content fields.
     search.fields = {
         title:   {boost: 100, store: true, required: true},
         date:    {index: false, store: true},

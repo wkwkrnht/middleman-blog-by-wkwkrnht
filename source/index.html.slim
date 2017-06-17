@@ -4,7 +4,10 @@ html lang='ja'
         meta charset='utf-8'
         meta content='IE=edge' http-equiv='X-UA-Compatible'
         meta name='viewport' content='width=device-width initial-scale=1'
-        title RT狂の思考ログ
+        meta name='renderer' content='webkit'
+        meta name='HandheldFriendly' content='true'
+        meta name='description' content=data.site.description /
+        title == data.site.title
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');

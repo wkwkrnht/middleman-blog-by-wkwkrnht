@@ -80,7 +80,6 @@ activate :robots,
         }
     ],
     :sitemap => "http://example.com/sitemap.xml"
-end
 
 configure :build do
     activate :minify_html

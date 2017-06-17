@@ -78,5 +78,4 @@ configure :build do
     activate :minify_javascript
     activate :cache_buster
     activate :relative_assets
-    activate :similar
 end

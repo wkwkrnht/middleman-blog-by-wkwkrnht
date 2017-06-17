@@ -38,12 +38,12 @@ a{
     border-bottom:0;
     -webkit-text-decoration-skip:objects;
     text-decoration:none;
-}
-a,a:visited,a:active{
-    color:#03a9f4;
-}
-a:active,a:hover{
-    outline-width:0;
+    &,&visited,&:active{
+        color:#03a9f4;
+    }
+    &:active,&:hover{
+        outline-width:0;
+    }
 }
 
 abbr[title]{

@@ -48,20 +48,26 @@ article{
 
 .article-main{
     font-size:1.6rem;
+    & > div{
+        margin:4vh auto;
+        max-width:80%;
+    }
 }
 .article-main p{
     margin:2vh auto;
     max-width:calc(1.6rem * 40);
     padding:1vh .5vh;
 }
-.article-main a[href^="http"]:empty::before{
-    content:attr(href);
-}
-.article-main a[href^="http"][title]:empty::before{
-    content:attr(title);
-}
-.article-main a:hover,.article-main a:focus{
-    border-bottom:solid 1px #03a9f4;
+.article-main a{
+    &[href^="http"]:empty::before{
+        content:attr(href);
+    }
+    &[href^="http"][title]:empty::before{
+        content:attr(title);
+    }
+    &:hover,&:focus{
+        border-bottom:solid 1px #03a9f4;
+    }
 }
 
 .article-main h1,.article-main h2,.article-main h3,.article-main h4,.article-main h5,.article-main h6{
@@ -138,18 +144,14 @@ article{
     &[title][cite]::after{
         content:attr(title)"\a" attr(cite);
     }
-}
-.article-main blockquote[title]::after,.article-main blockquote[cite]::after,.article-main blockquote[title][cite]::after{
-    border-top:1px solid #bbb;
-    display:block;
-    padding-top:1em;
-    text-align:right;
-    white-space:pre-wrap;
-    word-wrap:break-word;
-}
-.article-main > div{
-    margin:4vh auto;
-    max-width:80%;
+    &[title]::after,&[cite]::after,&[title][cite]::after{
+        border-top:1px solid #bbb;
+        display:block;
+        padding-top:1em;
+        text-align:right;
+        white-space:pre-wrap;
+        word-wrap:break-word;
+    }
 }
 .article-main iframe[src*="youtu.be"],
 .article-main iframe[src*="youtube.com"],

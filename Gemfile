@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'middleman'
 gem 'middleman-blog'
+gem "middleman-minify-html"
 gem 'middleman-syntax'
 gem 'middleman-search'
 gem 'middleman-robots'

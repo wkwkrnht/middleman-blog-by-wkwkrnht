@@ -24,10 +24,6 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 # Create an RFC4122 UUID http://www.ietf.org/rfc/rfc4122.txt
 set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 
-activate :asset_hash do |asset_hash|
-    asset_hash.exts << '.json'
-end
-
  # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'

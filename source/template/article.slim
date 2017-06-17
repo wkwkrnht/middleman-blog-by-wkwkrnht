@@ -32,14 +32,6 @@ html lang='ja'
             div.article-main role='main'
                 == yield
             footer.article-footer
-                aside.related-entry
-                    h2 関連記事
-                    div
-                        - similar_articles.first(5).each do|article|
-                            = link_to article.url do
-                                img src=article.eyecatch || '/img/no-img/512x512.png' alt='eyecatch'
-                                div
-                                    h3 = article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

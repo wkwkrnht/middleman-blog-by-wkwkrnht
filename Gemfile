@@ -8,7 +8,6 @@ gem 'middleman-sprockets'
 gem 'middleman-sitemap-ping'
 gem 'middleman-syntax'
 gem 'middleman-search'
-gem 'middleman-blog-similar'
 
 gem 'httparty'
 gem 'slim'

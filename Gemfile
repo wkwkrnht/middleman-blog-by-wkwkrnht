@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'builder'
 gem 'rake'
 gem 'middleman'
 gem 'middleman-blog'
@@ -10,7 +9,6 @@ gem 'middleman-sitemap-ping'
 gem 'middleman-syntax'
 gem 'middleman-search'
 gem 'middleman-blog-similar'
-gem 'levenshtein-ffi', :require => 'levenshtein'
 
 gem 'httparty'
 gem 'slim'

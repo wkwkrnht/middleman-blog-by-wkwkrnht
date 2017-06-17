@@ -1,3 +1,6 @@
+- description = current_page.data.description || data.site.description
+- title = current_page.title || data.site.title
+- meta-img = current_page.data.eyecatch || '/img/no-img/256x256.png'
 doctype html
 html lang='ja'
     head
@@ -6,12 +9,12 @@ html lang='ja'
         meta name='viewport' content='width=device-width initial-scale=1'
         meta name='renderer' content='webkit'
         meta name='HandheldFriendly' content='true'
-        meta name='description' content=current_page.data.description ? current_page.data.description : data.site.description /
+        meta name='description' content='#{description}'
         meta property='og:type' content='article'
         /meta property='og:url' content=URI.join(Middleman::sitemap_ping::Helper.config.host, URI.encode(current_resource.url))
-        meta property='og:description' content=current_page.data.description ? current_page.data.description : data.site.description /
-        meta property='og:site_name' content=current_page.title ? current_page.title : data.site.title /
-        meta property='og:image' content=current_page.data.eyecatch ? current_page.data.eyecatch : '/img/no-img/256x256.png' /
+        meta property='og:description' content='#{descrption}'
+        meta property='og:site_name' content=#{title}
+        meta property='og:image' content='#{meta-img}'
         title == current_page.title || data.site.title
         = javascript_include_tag 'loadCSS'
         javascript:

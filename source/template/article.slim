@@ -1,17 +1,17 @@
 doctype html
 html lang='ja'
     head
-        meta charset='utf-8'/
-        meta content='IE=edge' http-equiv='X-UA-Compatible'/
-        meta name='viewport' content='width=device-width initial-scale=1'/
-        meta name='renderer' content='webkit'/
-        meta name='HandheldFriendly' content='true'/
-        meta name='description' content=current_page.data.description || 'RT狂の思考ログ'/
-        meta property='og:type' content='article'/
+        meta charset='utf-8'
+        meta content='IE=edge' http-equiv='X-UA-Compatible'
+        meta name='viewport' content='width=device-width initial-scale=1'
+        meta name='renderer' content='webkit'
+        meta name='HandheldFriendly' content='true'
+        meta name='description' content=current_page.data.description || 'RT狂の思考ログ' /
+        meta property='og:type' content='article'
         /meta property='og:url' content=URI.join(Middleman::sitemap_ping::Helper.config.host, URI.encode(current_resource.url))
-        meta property='og:description' content=current_page.data.description || 'RT狂の思考ログ'/
-        meta property='og:site_name' content=current_page.title || 'RT狂の思考ログ'/
-        meta property='og:image' content=current_page.data.eyecatch || '/img/no-img/256x256.png'/
+        meta property='og:description' content=current_page.data.description || 'RT狂の思考ログ' /
+        meta property='og:site_name' content=current_page.title || 'RT狂の思考ログ' /
+        meta property='og:image' content=current_page.data.eyecatch || '/img/no-img/256x256.png' /
         title == current_page.title || 'RT狂の思考ログ'
         = javascript_include_tag 'loadCSS'
         javascript:

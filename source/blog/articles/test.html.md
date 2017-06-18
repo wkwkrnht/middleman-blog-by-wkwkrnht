@@ -2,6 +2,7 @@
 title: test
 date: 2017/01/01
 tag: hello, world, hello_world, test
+author: wkwkrnht
 ---
 
 ##見出し(This is h2)

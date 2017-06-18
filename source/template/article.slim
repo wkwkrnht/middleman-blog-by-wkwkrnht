@@ -38,11 +38,11 @@ html lang='ja'
                 aside.related-articles
                     h2
                     | 関連記事
-                        ul
-                            - current_article.similar_articles.first(10).each do|article|
+                        ul.card-list
+                            - current_article.similar_articles.each do|article|
                                 = link_to article.url do
-                                    li
-                                        = image_tag article.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch'
+                                    li.box-card
+                                        = image_tag article.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch', :class=>'card-img'
                                         h3 == article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'

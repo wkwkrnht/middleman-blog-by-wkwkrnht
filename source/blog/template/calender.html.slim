@@ -27,7 +27,7 @@ html lang='ja'
             ul
                 - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
                     li
-                        h2 = link_to articles.year, blog_year_path(year)
+                        h2 = link_to year, blog_year_path(year)
                         ul.card-list
                             - articles.each do |article|
                                 li

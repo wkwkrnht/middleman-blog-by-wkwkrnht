@@ -51,4 +51,10 @@ section{
     & h5{
         font-size:1.6rem;
     }
+    .card-list{
+        height:30vmax;
+        overflow-x:auto;
+        overflow-y:hidden;
+        width:100%;
+    }
 }

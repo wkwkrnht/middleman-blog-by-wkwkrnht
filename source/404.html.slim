@@ -86,12 +86,16 @@ html
                     - blog.articles.group_by {|a| a.date.year }.each do |year, articles_year|
                         li
                             h3
-                                = link_to year, blog_year_path(year)
+                                = link_to blog_year_path(year) do
+                                    ==year
+                                    | 年
                             ul
                                 li
                                     - articles_year.group_by {|a| a.date.month }.each do |month, articles_month|
                                         h4
-                                            = link_to month, blog_year_path(month)
+                                            = link_to blog_year_path(month) do
+                                                == month
+                                                | 月
                                         ul.card-list
                                             - articles_month.each do |article|
                                                 li

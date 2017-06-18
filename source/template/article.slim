@@ -35,11 +35,15 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
-                aside
-                    h2 Similar Entries
+                aside.related-articles
+                    h2
+                    | 関連記事
                         ul
-                            - current_article.similar_articles.first(5).each do|article|
-                                li= link_to article.title, article.url
+                            - current_article.similar_articles.first(10).each do|article|
+                                = link_to article.url do
+                                    li
+                                        = image_tag article.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch'
+                                        h3 == article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

@@ -1,8 +1,38 @@
-/ul
-/    - blog.articles.group_by {|a| a.date.year }.each do |year, article|
-/        li
-/            = link_to article.year, year
-/            ul
-/                - articles.each do |article|
-/                    li
-/                        = link_to article.url, article.title
+doctype html
+html
+    head
+        meta charset='utf-8'
+        meta content='IE=edge' http-equiv='X-UA-Compatible'
+        meta name='viewport' content='width=device-width initial-scale=1'
+        meta name='renderer' content='webkit'
+        meta name='HandheldFriendly' content='true'
+        meta name='description' content=data.site.description
+        title == data.site.title
+        = javascript_include_tag 'loadCSS'
+        javascript:
+            loadCSS('/style/base.css');
+            loadCSS('/style/list.css');
+    body
+        header.site-header
+            h1.site-title == data.site.title
+            span.copyright
+                span itemprop='copyrightYear'
+                    | 2017
+                span
+                    | &copy;
+                span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
+                    span itemprop='name'
+                        | data.site.title
+        main
+            ul
+                - blog.articles.group_by {|a| a.date.year }.each do |year, article|
+                    li
+                        h2 = link_to article.year, year
+                        ul.card-list
+                            - articles.each do |article|
+                                li
+                                    = link_to article.url, :class=>'box-card' do
+                                        = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
+                                        div.card-meta
+                                            h3 == article.title
+                                            time = article.date.strftime('%Y-%m-%d')

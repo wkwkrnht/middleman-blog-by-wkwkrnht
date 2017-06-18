@@ -14,7 +14,7 @@ html lang='ja'
             loadCSS('/style/list.css');
     body
         header.site-header
-            h1.site-title RT狂の思考ログ
+            h1.site-title == data.site.title
             span.copyright
                 span itemprop='copyrightYear'
                     | 2017
@@ -22,7 +22,7 @@ html lang='ja'
                     | &copy;
                 span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
                     span itemprop='name'
-                        | RT狂の思考ログ
+                        | data.site.title
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 

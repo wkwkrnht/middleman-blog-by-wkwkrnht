@@ -35,6 +35,11 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
+                aside
+                    h2 Similar Entries
+                        ul
+                            - current_article.similar_articles.first(5).each do|article|
+                                li= link_to article.title, article.url
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

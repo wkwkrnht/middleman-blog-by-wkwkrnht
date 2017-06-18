@@ -5,6 +5,7 @@ require 'slim'
 Dotenv.load
 Time.zone = 'Tokyo'
 
+activate :similar
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 

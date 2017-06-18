@@ -15,3 +15,22 @@ html
                 div
                     input.form-control#search type='text' placeholder='Search for...'
                 .search-results
+            section
+                h1
+                | 日時から検索
+                ul
+                    - blog.articles.group_by {|a| a.date.year }.each do |year, articles_year|
+                        li
+                            h2 = link_to year, blog_year_path(year)
+                            ul
+                                li
+                                    - articles_year.group_by {|a| a.date.month }.each do |month, articles_month|
+                                        h3 = link_to month, blog_year_path(month)
+                                        ul.card-list
+                                            - articles_month.each do |article|
+                                                li
+                                                    = link_to article.url, :class=>'box-card' do
+                                                        = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
+                                                        div.card-meta
+                                                            h4 == article.title
+                                                        time = article.date.strftime('%Y-%m-%d')

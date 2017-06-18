@@ -22,7 +22,7 @@ html lang='ja'
                     | &copy;
                 span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
                     span itemprop='name'
-                        | data.site.title
+                        = data.site.title
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 

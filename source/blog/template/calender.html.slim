@@ -14,7 +14,16 @@ html lang='ja'
             loadCSS('/style/list.css');
     body
         header.site-header
-            h1.site-title == data.site.title
+            h1.site-title 
+                - case page_type
+                    - when 'day'
+                        = Date.new(year, month, day).strftime('%b %e %Y')
+                    - when 'month'
+                        = Date.new(year, month, 1).strftime('%b %Y')
+                    - when 'year'
+                        = year
+                | のアーカイブ - 
+                | == data.site.title
             span.copyright
                 span itemprop='copyrightYear'
                     | 2017
@@ -22,17 +31,13 @@ html lang='ja'
                     | &copy;
                 span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
                     span itemprop='name'
-                        | data.site.title
-        main
-            ul
-                - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-                    li
-                        h2 = link_to year, blog_year_path(year)
-                        ul.card-list
-                            - articles.each do |article|
-                                li
-                                    = link_to article.url, :class=>'box-card' do
-                                        = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
-                                        div.card-meta
-                                            h3 == article.title
-                                            time = article.date.strftime('%Y-%m-%d')
+                        = data.site.title
+        main.card-list
+            - page_articles.each_with_index do |article, i|
+                a.box-card href='#{article.url}' title=article.title 
+                    = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
+                    div.card-meta
+                        h2
+                            = article.title 
+                        time
+                            = article.date.strftime('%Y-%m-%d')

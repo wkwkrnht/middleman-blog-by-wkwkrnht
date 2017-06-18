@@ -264,6 +264,22 @@ article{
     margin:2vh auto;
 }
 
+.related-articles > h2{
+    background-color:#03a9f4;
+    box-shadow:0 0 3vmin rgba(0,0,0,.2);
+    color:#fff;
+    line-height:6vh;
+    margin:2vh auto;
+    max-width:80%;
+    min-height:6vh;
+    text-align:center;
+}
+.related-articles .card-list{
+    height:30vmax;
+    overflow-x:auto;
+    overflow-y:hidden;
+    width:100%;
+}
 .card-list{
     -webkit-align-content:space-around;
     align-content:space-around;
@@ -278,7 +294,7 @@ article{
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     display:block;
     height:29vmax;
-    margin:4vh auto;
+    margin:auto;
     overflow:hidden;
     position:relative;
     width:29vmax;
@@ -302,7 +318,7 @@ article{
 .card-meta{
     background-color:rgba(0,0,0,.5);
     height:calc(29vmax / 10 * 4);
-    width:30vmax;
+    width:29vmax;
     overflow:hidden;
     text-align:center;
     text-overflow:ellipsis;

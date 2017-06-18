@@ -6,7 +6,6 @@ gem 'middleman-blog'
 gem 'middleman-blog-similar'
 gem "middleman-minify-html"
 gem 'middleman-syntax'
-gem 'middleman-search'
 gem 'middleman-robots'
 gem 'middleman-sitemap-ping'
 

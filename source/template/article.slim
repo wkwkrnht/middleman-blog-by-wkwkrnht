@@ -4,6 +4,7 @@
 - description = current_page.data.description || data.site.description
 - meta_img = current_page.data.eyecatch || URI.join(base_url, URI.encode('/img/no-img/256x256.png'))
 - theme_color = data.site.theme_color
+- first_post_year = data.site.startyear
 - date = current_page.data.date
 - author = current_page.data.author
 doctype html
@@ -63,6 +64,11 @@ html lang='ja'
             |            "width": 600,
             |            "height": 60
             |        }
+            |    },
+            |    "copyrightYear": "#{first_post_year}",
+            |    "copyrightHolder": {
+            |        "@type": "Organization",
+            |        "name": "#{site_title}"
             |    }
             |}
         = javascript_include_tag 'loadCSS'
@@ -85,8 +91,8 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
-                - if similar_articles.present?
-                    aside.related-articles
+                aside.related-articles
+                    - if similar_articles.present?
                         h2
                             | 関連記事
                         ul.card-list
@@ -96,8 +102,7 @@ html lang='ja'
                                         = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
                                         h3.card-meta
                                             == article.title
-                - else
-                    aside.new-articles
+                    - else
                         h2
                             | 最新記事
                         ul.card-list
@@ -108,10 +113,6 @@ html lang='ja'
                                         h3.card-meta
                                             == article.title
                 a.copyright href='/'
-                    span itemprop='copyrightYear'
-                        | 2017
-                    span
-                        | &copy;
-                    span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
-                        span itemprop='name'
-                            | RT狂の思考ログ
+                    == firest_post_year
+                    | &copy;
+                    == site_title

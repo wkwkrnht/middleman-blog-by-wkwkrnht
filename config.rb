@@ -39,16 +39,6 @@ activate :blog do |blog|
     blog.paginate = false
 end
 
-activate :search do |search|
-    search.resources = ['index.html', 'blog/']
-    search.fields = {
-        title:   {boost: 100, store: true, required: true},
-        date:    {index: false, store: true},
-        content: {boost: 50},
-        url:     {index: false, store: true}
-    }
-end
-
 activate :sitemap_ping do |config|
     config.host = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
 end

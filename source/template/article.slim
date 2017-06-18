@@ -31,6 +31,38 @@ html lang='ja'
         link rel='fluid-icon' href='#{meta_img}' title='#{site_title}'
         link rel='image_src' href='#{meta_img}' url='#{meta_img}' height="256" width="256"
         title == title
+        script type="application/ld+json">
+            |{
+            |    "@context": "http://schema.org",
+            |    "@type": "NewsArticle",
+            |    "mainEntityOfPage": {
+            |        "@type": "WebPage",
+            |        "@id": "https://google.com/article"
+            |    },
+            |    "headline": "#{title}",
+            |    "description": "#{description}",
+            |    "image": {
+            |        "@type": "ImageObject",
+            |        "url": "#{meta_img}",
+            |        "height": 256,
+            |        "width": 696
+            |    },
+            |    "datePublished": " == current_page.data.date.strftime('%Y-%m-%d') ",
+            |    "author": {
+            |        "@type": "Person",
+            |        "name": " == current_page.data.author "
+            |    },
+            |    "publisher": {
+            |        "@type": "Organization",
+            |        "name": "#{site_title}",
+            |        "logo": {
+            |            "@type": "ImageObject",
+            |            "url": " == data.site.logo ",
+            |            "width": 600,
+            |            "height": 60
+            |        }
+            |    }
+            |}
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
@@ -43,9 +75,10 @@ html lang='ja'
                     h1.article-title
                         == current_page.title
                     div
-                        .article-date
-                            time
-                        .article-author
+                        time.article-date
+                            == current_page.data.date.strftime('%Y-%m-%d')
+                        span.article-author
+                            == current_page.data.author
                     .widget_tag_cloud
             .article-main role='main'
                 == yield
@@ -59,7 +92,7 @@ html lang='ja'
                                 = link_to article.url do
                                     li.box-card
                                         = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
-                                        h3
+                                        h3.card-meta
                                             == article.title
                 - else
                     aside.new-articles
@@ -70,7 +103,7 @@ html lang='ja'
                                 = link_to article.url do
                                     li.box-card
                                         = image_tag '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
-                                        h3
+                                        h3.card-meta
                                             == article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'

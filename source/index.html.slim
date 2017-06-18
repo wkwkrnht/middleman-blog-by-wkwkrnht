@@ -53,11 +53,6 @@ html lang='ja'
             |    "copyrightHolder": {
             |        "@type": "Organization",
             |        "name": "#{site_title}"
-            |    },
-            |    "potentialAction": {
-            |        "@type": "SearchAction",
-            |        "target": "#{base_url}?s={search_term}",
-            |        "query-input": "required name=search_term"
             |    }
             |}
         = javascript_include_tag 'loadCSS'
@@ -68,13 +63,9 @@ html lang='ja'
         header.site-header
             h1.site-title == data.site.title
             span.copyright
-                span itemprop='copyrightYear'
-                    == first_post_year
-                span
-                    | &copy;
-                span itemprop='copyrightHolder' itemscope='' itemtype='http://schema.org/Organization'
-                    span itemprop='name'
-                        = data.site.title
+                == first_post_year
+                | &copy;
+                == data.site.title
         main.card-list
             - page_articles.each_with_index do |article, i|
                 a.box-card href='#{article.url}' title=article.title 

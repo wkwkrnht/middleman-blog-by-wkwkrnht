@@ -16,7 +16,7 @@ xml.feed 'xmlns' => 'http://www.w3.org/2005/Atom' do
             xml.id URI.join(site_url, article.url)
             xml.published article.date.to_time.iso8601
             xml.updated File.mtime(article.source_file).iso8601
-            xml.author { xml.name article.metadata[:locals][author] } unless article.metadata[:locals][author].blank?
+            xml.author { xml.name article.blog_data[:locals][author] } unless article.metadata[:locals][author].blank?
             xml.content article.body, 'type' => 'html'
         end
     end

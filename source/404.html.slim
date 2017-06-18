@@ -4,7 +4,9 @@ html
         meta charset='utf-8'
         meta content='IE=edge' http-equiv='X-UA-Compatible'
         meta name='viewport' content='width=device-width initial-scale=1'
-        title 404 page - RT狂の思考ログ
+        title
+            | 404 page - 
+            == data.site.title
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
@@ -12,12 +14,14 @@ html
     body
         main
             section
+                h1
+                    | キーワードで検索
                 div
                     input.form-control#search type='text' placeholder='Search for...'
                 .search-results
             section
                 h1
-                | 日時から検索
+                    | 日時で検索
                 ul
                     - blog.articles.group_by {|a| a.date.year }.each do |year, articles_year|
                         li

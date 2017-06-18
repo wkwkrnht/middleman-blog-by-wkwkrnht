@@ -4,6 +4,8 @@
 - description = current_page.data.description || data.site.description
 - meta_img = current_page.data.eyecatch || URI.join(base_url, URI.encode('/img/no-img/256x256.png'))
 - theme_color = data.site.theme_color
+- date = current_page.data.date
+- author = current_page.data.author
 doctype html
 html lang='ja'
     head
@@ -47,10 +49,10 @@ html lang='ja'
             |        "height": 256,
             |        "width": 696
             |    },
-            |    "datePublished": " == current_page.data.date.strftime('%Y-%m-%d') ",
+            |    "datePublished": "#{date}",
             |    "author": {
             |        "@type": "Person",
-            |        "name": " == current_page.data.author "
+            |        "name": "#{author}"
             |    },
             |    "publisher": {
             |        "@type": "Organization",
@@ -76,9 +78,9 @@ html lang='ja'
                         == current_page.title
                     div
                         time.article-date
-                            == current_page.data.date.strftime('%Y-%m-%d')
+                            == date
                         span.article-author
-                            == current_page.data.author
+                            == author
                     .widget_tag_cloud
             .article-main role='main'
                 == yield

@@ -1,7 +1,6 @@
 section{
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     box-sizing:border-box;
-    padding:1em 0;
     margin:4vh auto;
     max-width:96vw;
     & > h2{
@@ -9,41 +8,45 @@ section{
         color:#fff;
         display:inline-block;
         font-size:2rem;
+        padding:.5em 0;
         text-align:center;
         width:100%;
     }
-    & > ul{
+    & ul{
         list-style-type:none;
     }
 }
 
-.duck_duck_go_search_widget input{
-    display:inline-block;
-    &[type*="search"]{
-        margin-right:5%;
-        width:70%;
-    }
-    &[type*="submit"]{
-        background-color:#fff;
-        border:1px solid #03a9f4;
-        border-radius:3vmin;
-        color:#03a9f4;
-        width:15%;
-        &:hover{
-            background-color:#03a9f4;
-            color:#fff;
+.duck_duck_go_search_widget{
+    margin:2vh auto;
+    & input{
+        display:inline-block;
+        &[type*="search"]{
+            margin-right:5%;
+            width:70%;
+        }
+        &[type*="submit"]{
+            background-color:#fff;
+            border:1px solid #03a9f4;
+            border-radius:3vmin;
+            color:#03a9f4;
+            width:15%;
+            &:hover{
+                background-color:#03a9f4;
+                color:#fff;
+            }
         }
     }
 }
 
 .date-search{
     & h3{
-        font-size:1.8rem;
+        font-size:2rem;
     }
     & h4{
-        font-size:1.6rem;
+        font-size:1.8rem;
     }
     & h5{
-        font-size:1.4rem;
+        font-size:1.6rem;
     }
 }

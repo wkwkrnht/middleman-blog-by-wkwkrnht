@@ -60,6 +60,7 @@ html
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
+            loadCSS('/style/list.css');
             loadCSS('/style/404.css');
     body
         header.site-header
@@ -95,5 +96,7 @@ html
                                                     = link_to article.url, :class=>'box-card' do
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                                                         div.card-meta
-                                                            h4 == article.title
-                                                        time = article.date.strftime('%Y-%m-%d')
+                                                            h4
+                                                                == article.title
+                                                            time
+                                                                = article.date.strftime('%Y-%m-%d')

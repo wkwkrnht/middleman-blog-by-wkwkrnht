@@ -72,31 +72,33 @@ html
                 | &copy;
                 == site_title
         main
-            section
-                h1
+            section.keyword-search
+                h2
                     | キーワードで検索
                 form.duck_duck_go_search action="https://duckduckgo.com/" role='search'
                     input name='sites' type='hidden' value='#{base_url}'
                     input name='q' type='search' required='' label='キーワード'
                     input type='submit' value='Search' label='検索'
-            section
-                h1
+            section.date-search
+                h2
                     | 日時で検索
                 ul
                     - blog.articles.group_by {|a| a.date.year }.each do |year, articles_year|
                         li
-                            h2 = link_to year, blog_year_path(year)
+                            h3
+                                = link_to year, blog_year_path(year)
                             ul
                                 li
                                     - articles_year.group_by {|a| a.date.month }.each do |month, articles_month|
-                                        h3 = link_to month, blog_year_path(month)
+                                        h4
+                                            = link_to month, blog_year_path(month)
                                         ul.card-list
                                             - articles_month.each do |article|
                                                 li
                                                     = link_to article.url, :class=>'box-card' do
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                                                         div.card-meta
-                                                            h4
+                                                            h5
                                                                 == article.title
                                                             time
                                                                 = article.date.strftime('%Y-%m-%d')

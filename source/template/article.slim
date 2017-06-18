@@ -35,16 +35,17 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
-                aside.related-articles
-                    h2
-                        | 関連記事
-                    ul.card-list
-                        - similar_articles.first(5).each_with_index do |article, i|
-                            = link_to article.url do
-                                li.box-card
-                                    = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
-                                    h3
-                                        == article.title
+                - if similar_articles.present?
+                    aside.related-articles
+                        h2
+                            | 関連記事
+                        ul.card-list
+                            - similar_articles.first(5).each_with_index do |article, i|
+                                = link_to article.url do
+                                    li.box-card
+                                        = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
+                                        h3
+                                            == article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

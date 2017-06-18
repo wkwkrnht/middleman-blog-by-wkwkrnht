@@ -39,11 +39,12 @@ html lang='ja'
                     h2
                         | 関連記事
                     ul.card-list
-                        - current_article.similar_articles.each do|article|
+                        - current_article.similar_articles.each_with_index do |article, i|
                             = link_to article.url do
                                 li.box-card
-                                    = image_tag article.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch', :class=>'card-img'
-                                    h3 == article.title
+                                    = image_tag article.data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
+                                    h3
+                                        == article.title
                 a.copyright href='/'
                     span itemprop='copyrightYear'
                         | 2017

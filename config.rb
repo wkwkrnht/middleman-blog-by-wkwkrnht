@@ -40,7 +40,7 @@ activate :blog do |blog|
 end
 
 activate :search do |search|
-    search.resources = ['index.html', 'articles/']
+    search.resources = ['index.html', 'blog/']
     search.fields = {
         title:   {boost: 100, store: true, required: true},
         date:    {index: false, store: true},
@@ -50,7 +50,7 @@ activate :search do |search|
 end
 
 activate :sitemap_ping do |config|
-    config.host         = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
+    config.host = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
 end
 
 activate :robots,

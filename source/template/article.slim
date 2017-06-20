@@ -88,7 +88,10 @@ html lang='ja'
                             == date
                         span.article-author
                             == author
-                    .widget_tag_cloud
+                    ul.widget_tag_cloud
+                        - current_page.tags.each do |tag|
+                            li
+                                == link_to tag, tag_path(tag)
             .article-main role='main'
                 == yield
             footer.article-footer

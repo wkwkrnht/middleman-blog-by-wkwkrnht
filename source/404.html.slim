@@ -79,6 +79,13 @@ html
                     input name='sites' type='hidden' value='#{base_url}'
                     input name='q' type='search' required='' label='キーワード'
                     input type='submit' value='Search' label='検索'
+            section.tag-search
+                h2
+                    | タブで検索
+                ul
+                    - blog.tags.each do |tag, articles|
+                        li
+                            == link_to tag, tag_path(tag)
             section.date-search
                 h2
                     | 日時で検索

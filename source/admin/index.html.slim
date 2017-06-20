@@ -5,8 +5,6 @@ html
         meta name='viewport' content='width=device-width, initial-scale=1.0'
         title
             | Content Manager
-        = stylesheet_link_tag "https://unpkg.com/netlify-cms@^0.3/dist/cms.css"
-        = javascript_include_tag 'https://unpkg.com/netlify-cms@^0.3/dist/cms.js'
+        = stylesheet_link_tag 'https://unpkg.com/netlify-cms@^0.3/dist/cms.css'
     body
-        javascript:
-            CMS.registerPreviewStyle('/style/post.css');
+        = javascript_include_tag 'https://unpkg.com/netlify-cms@^0.3/dist/cms.js'

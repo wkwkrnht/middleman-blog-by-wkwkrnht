@@ -88,9 +88,9 @@ html lang='ja'
                             == date
                         span.article-author
                             == author
-                    - if current_page.data.tags.present?
+                    - if current_page.tags.present?
                         ul.widget_tag_cloud
-                            - current_page.data.tags.each do |tag|
+                            - current_page.tags.each do |tag|
                                 li
                                     == link_to tag, tag_path(tag)
             .article-main role='main'

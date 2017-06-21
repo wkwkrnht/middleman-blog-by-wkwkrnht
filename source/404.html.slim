@@ -67,7 +67,7 @@ html
             h1.site-title
                 | 404 page - 
                 == site_title
-            span.copyright
+            a.copyright href='/'
                 == first_post_year
                 | &copy;
                 == site_title
@@ -81,7 +81,7 @@ html
                     input type='submit' value='Search' label='検索'
             section.tag-search
                 h2
-                    | タブで検索
+                    | タグで検索
                 ul.widget_tag_cloud
                     - blog.tags.each_key do |tag|
                         li

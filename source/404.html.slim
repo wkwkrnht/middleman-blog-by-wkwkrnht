@@ -83,7 +83,7 @@ html
                 h2
                     | タブで検索
                 ul.widget_tag_cloud
-                    - blog.tags.each do |tag, articles|
+                    - blog.tags.each_key do |tag|
                         li
                             == link_to tag, tag_path(tag)
             section.date-search

@@ -89,7 +89,7 @@ html lang='ja'
                         span.article-author
                             == author
                     ul.widget_tag_cloud
-                        - current_page.tags.each do |tag|
+                        - current_page.data.tags.split(", ").each do |tag, articles|
                             li
                                 == link_to tag, tag_path(tag)
             .article-main role='main'

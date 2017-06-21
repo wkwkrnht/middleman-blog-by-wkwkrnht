@@ -82,8 +82,8 @@ html
             section.tag-search
                 h2
                     | タブで検索
-                ul
-                    - blog.tags.each do |tag, articles|
+                ul.widget_tag_cloud
+                    - blog.tags.split(", ").each do |tag, articles|
                         li
                             == link_to tag, tag_path(tag)
             section.date-search

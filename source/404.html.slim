@@ -83,7 +83,7 @@ html
                 h2
                     | タブで検索
                 ul
-                    - blog.tags.each do |tag, articles|
+                    - blog.tags.each do |tag|
                         li
                             == link_to tag, tag_path(tag)
             section.date-search

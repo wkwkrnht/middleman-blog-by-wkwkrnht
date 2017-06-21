@@ -277,6 +277,7 @@ article{
         text-align:center;
     }
     & .card-list{
+        flex-wrap:nowrap;
         height:30vmax;
         overflow-x:auto;
         overflow-y:hidden;

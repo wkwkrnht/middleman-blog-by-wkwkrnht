@@ -1,5 +1,5 @@
-@import 'parts/card';
-@import 'parts/tag-cloud';
+@import './parts/card.scss';
+@import './parts/tag-cloud.scss';
 article{
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     margin:6vh auto;

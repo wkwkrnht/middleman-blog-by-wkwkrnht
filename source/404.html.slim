@@ -82,7 +82,7 @@ html
             section.tag-search
                 h2
                     | タグで検索
-                ul.widget_tag_cloud
+                ul.tag-cloud
                     - blog.tags.each_key do |tag|
                         li
                             == link_to tag, tag_path(tag)

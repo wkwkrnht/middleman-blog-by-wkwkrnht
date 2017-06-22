@@ -75,7 +75,6 @@ html lang='ja'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-            loadCSS('/style/list.css');
     body class='#{page_classes}'
         article
             header.article-header
@@ -89,7 +88,7 @@ html lang='ja'
                         span.article-author
                             == author
                     - if current_page.tags.present?
-                        ul.widget_tag_cloud
+                        ul.tag-cloud
                             - current_page.tags.each do |tag|
                                 li
                                     == link_to tag, tag_path(tag)

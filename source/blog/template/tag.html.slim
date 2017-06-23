@@ -28,9 +28,9 @@ html lang='ja'
                         = data.site.title
         main.card-list
             - page_articles.each_with_index do |article, i|
-                a.box-card href='#{article.url}' title=article.title 
+                = link_to article.url, :class=>'mini-card' do
                     = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
-                    div.card-meta
+                    .card-meta
                         h2
                             = article.title 
                         time

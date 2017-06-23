@@ -1,18 +1,2 @@
+@import './parts/site-header.scss';
 @import './parts/card.scss';
-.site-header{
-    background-color:#03a9f4;
-    box-shadow:0 0 3vmin rgba(0,0,0,.1);
-    height:10%;
-    padding:3vh 0 5vh;
-    text-align:center;
-    width:100%;
-}
-.site-header,.site-header a{
-    color:#fff;
-}
-.site-title{
-    font-size:2.5rem;
-}
-.site-description,.site-header .copyright{
-    font-size:1.8rem;
-}

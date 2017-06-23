@@ -5,7 +5,8 @@
     flex-flow:row wrap;
     justify-content:space-evenly;
 }
-.box-card{
+
+.mini-card{
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     display:block;
     height:29vmax;
@@ -13,9 +14,9 @@
     overflow:hidden;
     position:relative;
     width:29vmax;
-}
-.box-card,.box-card:visited{
-    color:#fff;
+    &,&:visited{
+        color:#fff;
+    }
 }
 .card-img,.card-meta{
     bottom:0;
@@ -25,10 +26,10 @@
     height:29vmax;
     transition-duration:.3s;
     width:29vmax;
-}
-.card-img:hover{
-    transform:scale(1.1);
-	transition-duration:.3s;
+    &:hover{
+        transform:scale(1.1);
+    	transition-duration:.3s;
+    }
 }
 .card-meta{
     background-color:rgba(0,0,0,.5);
@@ -46,5 +47,26 @@
         font-size:1.8rem;
         padding:0 1em;
         width:29vmax;
+    }
+}
+
+.big-card{
+    box-shadow:0 0 3vmin rgba(0,0,0,.2);
+    box-sizing:border-box;
+    padding:0 0 1em;
+    margin:4vh auto;
+    max-width:96vw;
+    & > h2{
+        background-color:#03a9f4;
+        color:#fff;
+        display:inline-block;
+        font-size:2rem;
+        margin:0;
+        padding:.5em 0;
+        text-align:center;
+        width:100%;
+    }
+    & ul{
+        list-style-type:none;
     }
 }

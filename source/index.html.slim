@@ -69,7 +69,7 @@ html lang='ja'
                 == site_title
         main.card-list
             - page_articles.each_with_index do |article, i|
-                = link_to article.url, :class=>'box-card' do
+                = link_to article.url, :class=>'mini-card' do
                     = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2

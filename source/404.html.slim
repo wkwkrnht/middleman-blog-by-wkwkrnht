@@ -60,7 +60,6 @@ html
         = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
-            loadCSS('/style/list.css');
             loadCSS('/style/404.css');
     body
         header.site-header
@@ -72,21 +71,21 @@ html
                 | &copy;
                 == site_title
         main
-            section.keyword-search
+            section class='big-card keyword-search'
                 h2
                     | キーワードで検索
-                form.duck_duck_go_search action="https://duckduckgo.com/" role='search'
+                form action='https://duckduckgo.com/' role='search'
                     input name='sites' type='hidden' value='#{base_url}'
                     input name='q' type='search' required='' label='キーワード'
                     input type='submit' value='Search' label='検索'
-            section.tag-search
+            section class='big-card tag-search'
                 h2
                     | タグで検索
                 ul.tag-cloud
                     - blog.tags.each_key do |tag|
                         li
                             == link_to tag, tag_path(tag)
-            section.date-search
+            section class='big-card date-search'
                 h2
                     | 日時で検索
                 ul
@@ -106,9 +105,9 @@ html
                                         ul.card-list
                                             - articles_month.each do |article|
                                                 li
-                                                    = link_to article.url, :class=>'box-card' do
+                                                    = link_to article.url, :class=>'mini-card' do
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
-                                                        div.card-meta
+                                                        .card-meta
                                                             h5
                                                                 == article.title
                                                             time

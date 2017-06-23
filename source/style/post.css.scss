@@ -1,5 +1,6 @@
 @import './parts/card.scss';
 @import './parts/tag-cloud.scss';
+@import './parts/related-articles.scss';
 article{
     box-shadow:0 0 3vmin rgba(0,0,0,.2);
     margin:6vh auto;
@@ -264,28 +265,4 @@ article{
 .article-main a[href*=".gif"]{
     display:block;
     margin:2vh auto;
-}
-
-.related-articles{
-    width:90%;
-    & > h2{
-        background-color:#03a9f4;
-        box-shadow:0 0 3vmin rgba(0,0,0,.2);
-        color:#fff;
-        line-height:6vh;
-        margin:2vh auto;
-        max-width:80%;
-        min-height:6vh;
-        text-align:center;
-    }
-    & .card-list{
-        flex-wrap:nowrap;
-        height:30vmax;
-        overflow-x:auto;
-        overflow-y:hidden;
-        width:100%;
-    }
-    & .box-card{
-        margin:initial 4vh;
-    }
 }

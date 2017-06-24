@@ -95,34 +95,34 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
-                aside.related-articles
-                    - if similar_articles.present?
-                        h2
-                            | 関連記事
-                        ul.card-list
-                            - similar_articles.first(5).each_with_index do |article, i|
-                                = link_to article.url do
-                                    li.mini-card
-                                        = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
-                                        .card-meta
-                                            h3
-                                                == article.title
-                                            time
-                                                = article.date.strftime('%Y-%m-%d')
-                    - else
-                        h2
-                            | 最新記事
-                        ul.card-list
-                            - page_articles.first(5).each_with_index do |article, i|
-                                = link_to article.url do
-                                    li.mini-card
-                                        = image_tag '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
-                                        .card-meta
-                                            h3
-                                                == article.title
-                                            time
-                                                = article.date.strftime('%Y-%m-%d')
                 a.copyright href='/'
                     == first_post_year
                     | &copy;
                     == site_title
+        section class='big-card related-articles'
+            - if similar_articles.present?
+                h2
+                    | 関連記事
+                ul.card-list
+                    - similar_articles.first(6).each_with_index do |article, i|
+                        = link_to article.url do
+                            li.mini-card
+                                = image_tag article.blog_data.eyecatch || '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
+                                .card-meta
+                                    h3
+                                        == article.title
+                                    time
+                                        = article.date.strftime('%Y-%m-%d')
+            - else
+                h2
+                    | 最新記事
+                ul.card-list
+                    - page_articles.first(6).each_with_index do |article, i|
+                        = link_to article.url do
+                            li.mini-card
+                                = image_tag '/img/no-img/512x512.png', :alt=>'eyecatch', :class=>'card-img'
+                                .card-meta
+                                    h3
+                                        == article.title
+                                    time
+                                        = article.date.strftime('%Y-%m-%d')

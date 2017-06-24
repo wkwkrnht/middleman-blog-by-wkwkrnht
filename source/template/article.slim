@@ -98,9 +98,50 @@ html lang='ja'
             footer.article-footer
                 ul.share-button
                     li
-                        = link_to 'Toot', 'https://mastoshare.tk/post/'
+                        a href='https://mastoshare.tk/post/'
+                            | toot
                     li
-                        = link_to 'Tweet', 'https://twitter.com/share?url=#{meta_url}&amp;text=#{title}'
+                        a href='https://twitter.com/share?url=#{meta_url}&amp;text=#{title}'
+                            | tweet
+                    li
+                        a href='https://www.facebook.com/share.php?u=#{meta_url}'
+                            | like
+                    li
+                        a href='http://lineit.line.me/share/ui?url=#{meta_url}'
+                            | line
+                    li
+                        a href='https://plus.google.com/share?url=#{meta_url}'
+                            | +
+                    li
+                        a href='https://www.linkedin.com/shareArticle?mini=true&url=#{meta_url}&amp;title=#{title}'
+                            | linkedin
+                    li
+                        a href='https://bufferapp.com/add?url#{meta_url}&amp;title=#{title}'
+                            | buffer
+                    li
+                        a href='https://www.reddit.com/submit?url=#{meta_url}'
+                            | reddit
+                    li
+                        a href='http://vkontakte.ru/share.php?url=#{meta_url}'
+                            | vk
+                    li
+                        a href='http://www.stumbleupon.com/submit?url=#{meta_url}&amp;title=#{title}'
+                            | stumbleupon
+                    li
+                        a href='http://b.hatena.ne.jp/add?mode=confirm&url=#{meta_url}&amp;title=#{title}'
+                            | hatebu
+                    li
+                        a href='https://getpocket.com/edit?url=#{meta_url}&amp;title=#{title}'
+                            | pocket
+                    li
+                        a href='http://www.instapaper.com/text?u=#{meta_url}'
+                            | I
+                    li
+                        a href='https://www.tumblr.com/widgets/share/tool?canonicalUrl=#{meta_url}'
+                            | tumblr
+                    li
+                        a href='mailto:#{meta_url}'
+                            | mail
                 a.copyright href='/'
                     == first_post_year
                     | &copy;

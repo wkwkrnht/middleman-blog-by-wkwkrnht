@@ -72,10 +72,12 @@ html lang='ja'
             |        "name": "#{site_title}"
             |    }
             |}
-        = javascript_include_tag 'loadCSS'
+        = javascript_include_tag 'loadCSS', 'native-share'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
+            const shareButton = document.getElementById("native-share");
+            constNativeShare(shareButton);
     body class='#{page_classes}'
         article
             header.article-header
@@ -97,6 +99,9 @@ html lang='ja'
                 == yield
             footer.article-footer
                 ul.share-button
+                    li
+                        a#native-share
+                            | Android
                     li
                         a href='https://mastoshare.tk/post/'
                             | toot

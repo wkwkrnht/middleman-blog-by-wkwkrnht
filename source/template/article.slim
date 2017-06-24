@@ -76,8 +76,7 @@ html lang='ja'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-            const shareButton = document.getElementById("native-share");
-            constNativeShare(shareButton);
+            document.getElementById("native-share").onclick = doNativeShare();
     body class='#{page_classes}'
         article
             header.article-header

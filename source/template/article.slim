@@ -72,11 +72,18 @@ html lang='ja'
             |        "name": "#{site_title}"
             |    }
             |}
-        = javascript_include_tag 'loadCSS', 'native-share'
+        = javascript_include_tag 'loadCSS'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-            document.getElementById("native-share").onclick = doNativeShare;
+            var title = document.title;
+            var text = document.getElementsByName('description').item(0).content;
+            var url = window.location.href;
+            document.getElementById("native-share").onclick = function(){
+                navigator
+                .share({title: title, text: text, url: url})
+                .then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
+            };
     body class='#{page_classes}'
         article
             header.article-header

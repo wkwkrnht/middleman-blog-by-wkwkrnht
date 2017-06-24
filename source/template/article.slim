@@ -76,7 +76,7 @@ html lang='ja'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-            document.getElementById("native-share").onclick = doNativeShare();
+            document.getElementById("native-share").onclick = doNativeShare;
     body class='#{page_classes}'
         article
             header.article-header
@@ -99,8 +99,7 @@ html lang='ja'
             footer.article-footer
                 ul.share-button
                     li
-                        a#native-share
-                            | Android
+                        input#native-share type='button' value='Android'
                     li
                         a href='https://mastoshare.tk/post/'
                             | toot

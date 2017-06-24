@@ -3,6 +3,7 @@
 - title = current_page.title || site_title
 - description = current_page.data.description || data.site.description
 - meta_img = current_page.data.eyecatch || URI.join(base_url, URI.encode('/img/no-img/256x256.png'))
+- meta_url = URI.join(base_url, URI.encode(current_resource.url))
 - theme_color = data.site.theme_color
 - first_post_year = data.site.startyear
 - date = current_page.data.date
@@ -21,7 +22,7 @@ html lang='ja'
         meta property='fb:app_id' content=data.site.facebookID
         meta property='og:type' content='article'
         meta property='og:title' content='#{title}'
-        meta property='og:url' content=URI.join(base_url, URI.encode(current_resource.url))
+        meta property='og:url' content=meta_url
         meta property='og:description' content='#{description}'
         meta property='og:site_name' content='#{site_title}'
         meta property='og:image' content='#{meta_img}'
@@ -95,6 +96,11 @@ html lang='ja'
             .article-main role='main'
                 == yield
             footer.article-footer
+                ul.share-button
+                    li
+                        = link_to 'Toot', 'https://mastoshare.tk/post/'
+                    li
+                        = link_to 'Tweet', 'https://twitter.com/share?url=#{meta_url}&amp;text=#{title}'
                 a.copyright href='/'
                     == first_post_year
                     | &copy;

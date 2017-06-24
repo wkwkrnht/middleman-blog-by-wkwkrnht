@@ -79,10 +79,8 @@ html lang='ja'
             var title = document.title;
             var text = document.getElementsByName('description').item(0).content;
             var url = window.location.href;
-            document.getElementById("native-share").onclick = function(){
-                navigator
-                .share({title: title, text: text, url: url})
-                .then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
+            document.getElementById("nativeShare").onclick = function(){
+                navigator.share({title: title, text: text, url: url}).then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
             };
     body class='#{page_classes}'
         article
@@ -106,9 +104,10 @@ html lang='ja'
             footer.article-footer
                 ul.share-button
                     li
-                        input#native-share type='button' value='Android'
+                        a#nativeShare
+                            | Android
                     li
-                        a href='https://mastoshare.tk/post/'
+                        a href='https://mastodonshare.net/post/'
                             | toot
                     li
                         a href='https://twitter.com/share?url=#{meta_url}&amp;text=#{title}'

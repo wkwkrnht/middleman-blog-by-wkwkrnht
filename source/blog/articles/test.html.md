@@ -59,7 +59,7 @@ hello world
 
 ##コード
 
-``` css
+```
 
 :root {
     color:#333;

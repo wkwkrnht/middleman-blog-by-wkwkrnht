@@ -76,12 +76,6 @@ html lang='ja'
         javascript:
             loadCSS('/style/base.css');
             loadCSS('/style/post.css');
-            var title = document.title;
-            var text = document.getElementsByName('description').item(0).content;
-            var url = window.location.href;
-            document.getElementById("nativeShare").onclick = function(){
-                navigator.share({title: title, text: text, url: url}).then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
-            };
     body class='#{page_classes}'
         article
             header.article-header
@@ -104,7 +98,7 @@ html lang='ja'
             footer.article-footer
                 ul.share-button
                     li
-                        a#nativeShare href='#'
+                        a#nativeShare
                             | Android
                     li
                         a href='https://mastodonshare.net/post/'
@@ -182,3 +176,10 @@ html lang='ja'
                                         == article.title
                                     time
                                         = article.date.strftime('%Y-%m-%d')
+        javascript:
+            var title = document.title;
+            var text = document.getElementsByName('description').item(0).content;
+            var url = window.location.href;
+            document.getElementById("nativeShare").onclick = function(){
+                navigator.share({title: title, text: text, url: url}).then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
+            };

@@ -59,14 +59,13 @@ hello world
 
 ##コード
 
-```
 
+```
 :root {
     color:#333;
     font:400 10px/1.9 "メイリオ";
     padding:calc(100% / 2 - 50px);
 }
-
 ```
 
 ##独自拡張

@@ -35,7 +35,7 @@ html lang='ja'
         link rel='fluid-icon' href='#{meta_img}' title='#{site_title}'
         link rel='image_src' href='#{meta_img}' url='#{meta_img}' height="256" width="256"
         title == title
-        script type="application/ld+json">
+        script type="application/ld+json"
             |{
             |    "@context": "http://schema.org",
             |    "@type": "NewsArticle",
@@ -177,9 +177,9 @@ html lang='ja'
                                     time
                                         = article.date.strftime('%Y-%m-%d')
         javascript:
-            var title = document.title;
-            var text = document.getElementsByName('description').item(0).content;
-            var url = window.location.href;
             document.getElementById("nativeShare").onclick = function(){
-                navigator.share({title: title, text: text, url: url}).then(() => console.log('Successfully sent share'), error => console.error('Error sharing: ' + error));
+                var title = document.title;
+                var text = document.getElementsByName('description').item(0).content;
+                var url = window.location.href;
+                navigator.share({title: title, text: text, url: url}).catch(function(error){console.error('Error sharing: ' + error)});
             };

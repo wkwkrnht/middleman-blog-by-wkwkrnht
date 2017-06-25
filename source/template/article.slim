@@ -99,61 +99,61 @@ html lang='ja'
                 ul.share-button
                     li
                         a#nativeShare
-                            | Android
+                            span class='icon icon-share'
                     li
                         a href='https://mastodonshare.net/post/'
                             | toot
                     li
                         a href='https://twitter.com/share?url=#{meta_url}&amp;text=#{title}'
-                            | tweet
+                            span class='icon icon-brand'
                     li
                         a href='https://www.facebook.com/share.php?u=#{meta_url}'
-                            | like
+                            span class='icon icon-facebook'
                     li
                         a href='http://lineit.line.me/share/ui?url=#{meta_url}'
-                            | line
+                            span class='icon icon-brand2'
                     li
                         a href='https://plus.google.com/share?url=#{meta_url}'
-                            | +
+                            span class='icon icon-brand3'
                     li
                         a href='https://www.linkedin.com/shareArticle?mini=true&url=#{meta_url}&amp;title=#{title}'
-                            | linkedin
+                            span class='icon icon-brand4'
                     li
                         a href='https://bufferapp.com/add?url#{meta_url}&amp;title=#{title}'
-                            | buffer
+                            span class='icon icon-brand5'
                     li
                         a href='http://hootsuite.com/hootlet/social-share?url=#{meta_url}&amp;title=#{title}&amp;partner=#{site_title}'
-                            | hootsuite
+                            span class='icon icon-brand6'
                     li
                         a href='https://www.reddit.com/submit?url=#{meta_url}'
-                            | reddit
+                            span class='icon icon-brand7'
                     li
                         a href='http://vkontakte.ru/share.php?url=#{meta_url}'
-                            | vk
+                            span class='icon icon-brand8'
                     li
                         a href='http://www.stumbleupon.com/submit?url=#{meta_url}&amp;title=#{title}'
-                            | stumbleupon
+                            span class='icon icon-brand9'
                     li
                         a href='http://www.digg.com/submit?url=#{meta_url}&amp;title=#{title}'
-                            | digg
+                            span class='icon icon-brand10'
                     li
                         a href='http://b.hatena.ne.jp/add?mode=confirm&url=#{meta_url}&amp;title=#{title}'
-                            | hatebu
+                            span class='icon icon-brand11'
                     li
                         a href='https://getpocket.com/edit?url=#{meta_url}&amp;title=#{title}'
-                            | pocket
+                            span class='icon icon-brand12'
                     li
                         a href='http://www.instapaper.com/text?u=#{meta_url}'
-                            | I
+                            span class='icon icon-brand13'
                     li
                         a href='https://www.tumblr.com/widgets/share/tool?canonicalUrl=#{meta_url}'
-                            | tumblr
+                            span class='icon icon-brand14'
                     li
                         a href='mailto:?Subject=#{title}&amp;Body=#{meta_url}'
-                            | mail
+                            span class='icon icon-mail'
                     li
                         a href='javascript:void(0);' onClick='window.print();return false;'
-                            | Print
+                            span class='icon icon-print'
                 a.copyright href='/'
                     == first_post_year
                     | &copy;

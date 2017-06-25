@@ -60,7 +60,7 @@ hello world
 ##コード
 
 
-```
+``` css
 :root {
     color:#333;
     font:400 10px/1.9 "メイリオ";

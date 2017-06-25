@@ -3,17 +3,18 @@
     & li{
         display:inline-block;
         & a{
-            background-color:#ccc;
+            background-color:#eee;
+            box-sizing:border-box;
             color:#fff;
             display:inline-block;
             font-size:1.8rem;
-            height:3em;
+            height:6em;
             margin:2vh;
             text-align:center;
-            vertical-align:center;
-            width:4em;
-            &[href*="hootsuite"]{
-                font-weight:600;
+            vertical-align:middle;
+            width:8em;
+            &[href*="hootsuite"],&[href*="reddit"]{
+                font-weight:700;
             }
             &[href*="instapaper"]{
                 background-color:#fff;

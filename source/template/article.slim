@@ -122,6 +122,9 @@ html lang='ja'
                         a href='https://bufferapp.com/add?url#{meta_url}&amp;title=#{title}'
                             | buffer
                     li
+                        a href='http://hootsuite.com/hootlet/social-share?url=#{meta_url}&amp;title=#{title}&amp;partner=#{site_title}'
+                            | hootsuite
+                    li
                         a href='https://www.reddit.com/submit?url=#{meta_url}'
                             | reddit
                     li
@@ -130,6 +133,9 @@ html lang='ja'
                     li
                         a href='http://www.stumbleupon.com/submit?url=#{meta_url}&amp;title=#{title}'
                             | stumbleupon
+                    li
+                        a href='http://www.digg.com/submit?url=#{meta_url}&amp;title=#{title}'
+                            | digg
                     li
                         a href='http://b.hatena.ne.jp/add?mode=confirm&url=#{meta_url}&amp;title=#{title}'
                             | hatebu
@@ -143,8 +149,11 @@ html lang='ja'
                         a href='https://www.tumblr.com/widgets/share/tool?canonicalUrl=#{meta_url}'
                             | tumblr
                     li
-                        a href='mailto:#{meta_url}'
+                        a href='mailto:?Subject=#{title}&amp;Body=#{meta_url}'
                             | mail
+                    li
+                        a href='javascript:void(0);' onClick='window.print();return false;'
+                            | Print
                 a.copyright href='/'
                     == first_post_year
                     | &copy;

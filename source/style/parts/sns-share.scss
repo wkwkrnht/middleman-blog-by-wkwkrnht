@@ -12,6 +12,14 @@
             text-align:center;
             vertical-align:center;
             width:4em;
+            &[href*="hootsuite"]{
+                font-weight:600;
+            }
+            &[href*="instapaper"]{
+                background-color:#fff;
+                border:1vmin solid #333;
+                color:#333;
+            }
         }
     }
 }

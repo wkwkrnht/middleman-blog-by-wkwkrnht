@@ -1,5 +1,6 @@
 @import 'snsicon';
 .share-button{
+    margin:4vh auto;
     & li{
         display:inline-block;
         & a{
@@ -9,9 +10,9 @@
             display:inline-block;
             font-size:2rem;
             height:3em;
-            margin:2vh;
+            margin:1vh 2vh;
             text-align:center;
-            vertical-align:middle;
+            vertical-align:50%;
             width:4em;
             &[href*="hootsuite"],&[href*="reddit"]{
                 font-weight:700;

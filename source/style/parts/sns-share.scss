@@ -1,11 +1,12 @@
 @import 'snsicon';
 .share-button{
+    background-color:#eee;
     box-shadow:0 7px 10px -5px rgba(0,0,0,.1) inset;
     margin:4vh auto;
     overflow-x:auto;
     overflow-y:hidden;
     white-space:nowrap;
-    width:100%;
+    width:inherit;
     & li{
         display:inline-block;
         & a{

@@ -5,10 +5,6 @@ require 'slim'
 Dotenv.load
 Time.zone = 'Tokyo'
 
-activate :similar
-activate :automatic_image_sizes
-activate :syntax, :line_numbers => true
-
 set :layout, :_auto_layout
 set :layouts_dir, 'template'
 set :helpers_dir, 'helper'
@@ -25,6 +21,10 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 # Create an RFC4122 UUID http://www.ietf.org/rfc/rfc4122.txt
 set :uuid, UUID.create_sha1('malik.pro', UUID::NameSpace_URL)
 
+activate :similar
+activate :automatic_image_sizes
+activate :syntax, :line_numbers => true
+
  # Blog settings
 activate :blog do |blog|
     blog.prefix = 'blog'
@@ -35,12 +35,11 @@ activate :blog do |blog|
     blog.tag_template = 'blog/template/tag.html'
     blog.calendar_template = 'blog/template/calender.html'
     blog.name = 'RT狂の思考ログ'
-    blog.summary_separator = /\(READMORE\)/
     blog.paginate = false
 end
 
 activate :sitemap_ping do |config|
-    config.host = data.site.host # (required) Host of your website
+    config.host = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
 end
 
 activate :robots,

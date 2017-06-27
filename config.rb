@@ -40,7 +40,7 @@ activate :blog do |blog|
 end
 
 activate :sitemap_ping do |config|
-    config.host = 'https://middleman-by-wkwkrnht.netlify.com' # (required) Host of your website
+    config.host = data.site.host # (required) Host of your website
 end
 
 activate :robots,

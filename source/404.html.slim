@@ -84,7 +84,7 @@ html
                 ul.tag-cloud
                     - blog.tags.each_key do |tag|
                         li
-                            == link_to tag, tag_path(tag)
+                            == link_to tag, tag_path(tag), :title=>tag, :tabindex=>'0'
             section class='big-card date-search'
                 h2
                     | 日時で検索
@@ -105,7 +105,7 @@ html
                                         ul.card-list
                                             - articles_month.each do |article|
                                                 li
-                                                    = link_to article.url, :class=>'mini-card' do
+                                                    = link_to article.url, :class=>'mini-card', :title=>article.title, :tabindex=>'0' do
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                                                         .card-meta
                                                             h5

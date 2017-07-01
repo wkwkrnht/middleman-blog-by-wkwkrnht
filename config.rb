@@ -53,13 +53,9 @@ activate :robots,
             :user_agent => 'Googlebot-Image',
             :allow => %w(/),
             :disallow => %w(404.html)
-        },
-        {
-            :user_agent => '*',
-            :allow => %w(/)
         }
     ],
-    :sitemap => "https://middleman-by-wkwkrnht.netlify.com/sitemap.xml"
+    :sitemap => 'https://middleman-by-wkwkrnht.netlify.com/sitemap.xml'
 
 configure :build do
     activate :minify_html

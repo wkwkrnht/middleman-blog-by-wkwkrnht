@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rake'
+gem 'rake', '>=12.0.0'
+gem 'rack', '>=2.0.3'
 gem 'middleman', '>=4.2.1'
 gem 'middleman-blog', '>=4.0.2'
 gem 'middleman-blog-similar', '>=2.0.1'

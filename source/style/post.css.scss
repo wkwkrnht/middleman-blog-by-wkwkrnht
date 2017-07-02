@@ -61,6 +61,11 @@ article{
         margin:4vh auto;
         max-width:80%;
     }
+    & #markdown-toc{
+        box-shadow:0 0 3vmin rgba(0,0,0,.1);
+        font-size:1.7rem;
+        margin:4vh auto;
+    }
 }
 .article-main p{
     margin:2vh auto;
@@ -179,15 +184,8 @@ article{
     width:80vw;
 }
 
-.article-main li::after{
-    border-bottom:1px dashed #aaa;
-    content:"";
-    display:block;
-    height:0;
-    left:0;
-    position:relative;
-    top:0;
-    width:100%;
+.article-main li{
+    border-bottom:1px dashed #ccc;
 }
 .article-main ul{
     list-style:none;

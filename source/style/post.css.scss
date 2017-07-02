@@ -49,7 +49,7 @@ article{
         display:block;
         font-size:1.8rem;
         margin:0;
-        padding:1em 0;
+        padding:1vh 0;
         text-align:center;
         width:100%;
     }
@@ -66,6 +66,7 @@ article{
         box-shadow:0 0 3vmin rgba(0,0,0,.2);
         font-size:1.7rem;
         margin:4vh auto;
+        padding:1vh 0;
         width:86%;
     }
 }
@@ -82,7 +83,7 @@ article{
         content:attr(title);
     }
     &:hover,&:focus{
-        border-bottom:solid 1px #03a9f4;
+        border-bottom:1px solid #03a9f4;
     }
 }
 
@@ -192,7 +193,7 @@ article{
 }
 .article-main ul,.article-main,ol{
     list-style:none;
-    margin:2em auto;
+    margin:1vh auto;
 }
 .article-main ul{
     max-width:80%;

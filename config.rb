@@ -29,7 +29,7 @@ activate :blog do |blog|
     blog.prefix = 'blog'
     blog.default_extension = '.md'
     blog.sources = 'articles/:title.html'
-    blog.permalink = ':title.html'
+    blog.permalink = ':page_id.html'
     blog.layout = 'template/article'
     blog.tag_template = 'blog/template/tag.html'
     blog.calendar_template = 'blog/template/calender.html'

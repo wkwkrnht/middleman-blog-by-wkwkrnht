@@ -63,7 +63,7 @@ article{
     }
     & #markdown-toc{
         background-color:#fff;
-        box-shadow:0 0 3vmin rgba(0,0,0,.1);
+        box-shadow:0 0 3vmin rgba(0,0,0,.2);
         font-size:1.7rem;
         margin:4vh auto;
         width:86%;
@@ -190,9 +190,11 @@ article{
     border-bottom:1px dashed #ccc;
     line-height:2;
 }
-.article-main ul{
+.article-main ul,.article-main,ol{
     list-style:none;
     margin:2em auto;
+}
+.article-main ul{
     max-width:80%;
     & li::before{
         color:#03a9f4;
@@ -204,9 +206,7 @@ article{
 }
 .article-main ol{
     counter-reset:counter-name;
-    margin:2em auto;
     & li{
-        list-style:none;
         margin:0;
         padding-left:2em;
         padding-top:.1em;
@@ -214,7 +214,6 @@ article{
         &::before{
             background-color:#03a9f4;
             border-radius:50%;
-            bottom:2em;
             color:#fff;
             content:counter(counter-name);
             counter-increment:counter-name;

@@ -2,7 +2,6 @@ require 'lib/uuid'
 require 'ansi/code'
 require 'slim'
 
-Dotenv.load
 Time.zone = 'Tokyo'
 
 set :layout, :_auto_layout

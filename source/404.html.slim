@@ -1,5 +1,6 @@
 - base_url = data.site.host
 - site_title = data.site.title
+- title = '404 page - ' + site_tiitle
 - description = data.site.description
 - meta_img = data.site.icon || URI.join(base_url, URI.encode('/img/no-img/256x256.png'))
 - theme_color = data.site.theme_color
@@ -17,7 +18,7 @@ html
         meta name='msapplication-TileColor' content='#{theme_color}'
         meta property='fb:app_id' content=data.site.facebookID
         meta property='og:type' content='article'
-        meta property='og:title' content='404 page - #{site_title}'
+        meta property='og:title' content='#{title}'
         meta property='og:url' content='#{base_url}'
         meta property='og:description' content='#{description}'
         meta property='og:site_name' content='#{site_title}'
@@ -31,8 +32,7 @@ html
         link rel='fluid-icon' href='#{meta_img}' title='#{site_title}'
         link rel='image_src' href='#{meta_img}' url='#{meta_img}' height="256" width="256"
         title
-            | 404 page - 
-            == site_title
+            #{{title}}
         script type='application/ld+json'
             |{
             |    "@context": "http://schema.org",
@@ -64,8 +64,7 @@ html
     body
         header.site-header
             h1.site-title
-                | 404 page - 
-                == site_title
+                #{{title}}
             a.copyright href='/'
                 == first_post_year
                 | &copy;
@@ -105,7 +104,7 @@ html
                                         ul.card-list
                                             - articles_month.each do |article|
                                                 li
-                                                    = link_to article.url, :class=>'mini-card', :title=>article.title, :tabindex=>'0' do
+                                                    = link_to URI.encode(article.url), :class=>'mini-card', :title=>article.title, :tabindex=>'0' do
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                                                         .card-meta
                                                             h5

@@ -62,14 +62,16 @@ article{
         max-width:80%;
     }
     & #markdown-toc{
+        background-color:#fff;
         box-shadow:0 0 3vmin rgba(0,0,0,.1);
         font-size:1.7rem;
         margin:4vh auto;
+        width:86%;
     }
 }
 .article-main p{
     margin:2vh auto;
-    max-width:calc(1.6rem * 40);
+    max-width:calc(1.6rem * 50);
     padding:1vh .5vh;
 }
 .article-main a{
@@ -186,6 +188,7 @@ article{
 
 .article-main li{
     border-bottom:1px dashed #ccc;
+    line-height:2;
 }
 .article-main ul{
     list-style:none;
@@ -211,15 +214,16 @@ article{
         &::before{
             background-color:#03a9f4;
             border-radius:50%;
+            bottom:2em;
             color:#fff;
             content:counter(counter-name);
             counter-increment:counter-name;
             display:inline-block;
             height:1.5em;
             left:0;
-            line-height:1.5em;
             position:absolute;
             text-align:center;
+            vertical-align:50%;
             width:1.5em;
         }
     }

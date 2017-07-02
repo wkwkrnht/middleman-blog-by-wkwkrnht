@@ -1,4 +1,3 @@
-require 'lib/uuid'
 require 'ansi/code'
 require 'slim'
 

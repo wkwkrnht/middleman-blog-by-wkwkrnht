@@ -17,10 +17,10 @@ body{
     scroll-behavior:smooth;
     width:100%;
 }
-template,[hidden],.none{
+template,[hidden]{
     display:none;
 }
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary,.block{
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
     display:block;
 }
 audio,canvas,progress,video{
@@ -164,8 +164,4 @@ textarea{
 }
 ::-webkit-file-upload-button{
     -webkit-appearance:button;
-}
-
-span[itemprop*="copyrightHolder"] span[itemprop*="name"]{
-    font-weight:bold;
 }

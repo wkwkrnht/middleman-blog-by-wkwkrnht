@@ -16,7 +16,7 @@ set :slim, :layout_engine => :slim, :format => :html
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
 
-activate :i18n, :mount_at_root => :ja
+activate :i18n, :mount_at_root => :jp
 activate :similar
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true

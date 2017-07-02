@@ -40,7 +40,7 @@ article{
 }
 .article-footer{
     margin:6vh 0 0;
-    & *{
+    & > *{
         margin:4vh auto;
     }
     & .copyright{

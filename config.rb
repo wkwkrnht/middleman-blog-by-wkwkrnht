@@ -26,7 +26,7 @@ activate :blog do |blog|
     blog.prefix = 'blog'
     blog.default_extension = '.md'
     blog.sources = 'articles/:title.html'
-    blog.permalink = ':year/:id.html'
+    blog.permalink = ':year/:title.html'
     blog.layout = 'template/article'
     blog.tag_template = 'blog/template/tag.html'
     blog.calendar_template = 'blog/template/calender.html'

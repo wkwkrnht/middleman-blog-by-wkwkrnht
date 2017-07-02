@@ -2,7 +2,7 @@
 .share-button{
     background-color:#eee;
     box-shadow:0 7px 10px -5px rgba(0,0,0,.1) inset;
-    margin:0 auto;
+    margin:0;
     overflow-x:auto;
     overflow-y:hidden;
     white-space:nowrap;
@@ -66,5 +66,8 @@
                 background-color:#6383a8;
             }
         }
+    }
+    .article-footer &{
+        margin:0;
     }
 }

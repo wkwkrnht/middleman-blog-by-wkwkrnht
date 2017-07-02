@@ -5,8 +5,9 @@ tags: hello, world, hello_world, test
 author: wkwkrnht
 ---
 
-1.TOC
+1. TOC
 {:toc}
+
 ##見出し(This is h2)
 
 hello world

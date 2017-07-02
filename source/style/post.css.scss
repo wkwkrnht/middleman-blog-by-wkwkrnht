@@ -131,8 +131,8 @@ article{
     border-bottom:.75vmin dashed #03a9f4;
 }
 
-.article-main pre,.article-main address{
-    margin:1vh auto;
+.article-main pre,.article-main address,.article-main code{
+    margin:2vh auto;
     max-width:94%;
 }
 .article-main pre{
@@ -223,7 +223,7 @@ article{
             left:0;
             position:absolute;
             text-align:center;
-            vertical-align:25%;
+            vertical-align:75%;
             width:1.5em;
         }
     }

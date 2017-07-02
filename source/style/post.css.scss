@@ -38,15 +38,21 @@ article{
 .article-date,.article-author{
     width:49%;
 }
-.article-footer .copyright{
-    background-color:#03a9f4;
-    color:#fff;
-    display:block;
-    font-size:1.8rem;
+.article-footer{
     margin:6vh 0 0;
-    padding:1em 0;
-    text-align:center;
-    width:100%;
+    & *{
+        margin:4vh auto;
+    }
+    & .copyright{
+        background-color:#03a9f4;
+        color:#fff;
+        display:block;
+        font-size:1.8rem;
+        margin:0;
+        padding:1em 0;
+        text-align:center;
+        width:100%;
+    }
 }
 
 .article-main{

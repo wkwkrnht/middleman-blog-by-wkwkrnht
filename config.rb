@@ -5,15 +5,13 @@ Time.zone = 'Tokyo'
 
 set :layout, :_auto_layout
 set :layouts_dir, 'template'
-set :helpers_dir, 'helper'
-set :locales_dir, 'locale'
 set :images_dir, 'img'
 set :css_dir, 'style'
 set :js_dir, 'script'
 
 # set engines, template->slim, markdown->kramdown
 set :slim, :layout_engine => :slim, :format => :html
-set :markdown_engine, :kramdown
+set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
 
 activate :similar
@@ -58,5 +56,4 @@ configure :build do
     activate :minify_css
     activate :minify_javascript
     activate :cache_buster
-    activate :relative_assets
 end

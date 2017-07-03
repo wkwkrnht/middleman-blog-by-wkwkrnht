@@ -11,7 +11,7 @@ set :js_dir, 'script'
 
 # set engines, template->slim, markdown->kramdown
 set :slim, :layout_engine => :slim, :format => :html
-set :markdown_engine, :redcarpet
+set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
 
 activate :similar

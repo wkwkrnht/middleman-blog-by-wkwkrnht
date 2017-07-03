@@ -57,33 +57,44 @@ article{
 
 .article-main{
     font-size:1.6rem;
-    & > div{
-        margin:4vh auto;
-        max-width:80%;
-    }
     & #markdown-toc{
         background-color:#fff;
         box-shadow:0 0 3vmin rgba(0,0,0,.2);
         font-size:1.7rem;
         margin:4vh auto;
-        padding:2vh 0;
+        padding:2vh;
         width:86%;
+        &::before{
+            background-color:#03a9f4;
+            color:#fff;
+            content:"目次";
+            display:inline-block;
+            font-size:2rem;
+            margin:0 0 1vh;
+            padding:.5em 0;
+            text-align:center;
+            width:100%;
+        }
     }
-}
-.article-main p{
-    margin:2vh auto;
-    max-width:calc(1.6rem * 50);
-    padding:1vh .5vh;
-}
-.article-main a{
-    &[href^="http"]:empty::before{
-        content:attr(href);
+    & > div{
+        margin:4vh auto;
+        max-width:80%;
     }
-    &[href^="http"][title]:empty::before{
-        content:attr(title);
+    & p{
+        margin:2vh auto;
+        max-width:calc(1.6rem * 46);
+        padding:1vh .5vh;
     }
-    &:hover,&:focus{
-        border-bottom:1px solid #03a9f4;
+    & a{
+        &[href^="http"]:empty::before{
+            content:attr(href);
+        }
+        &[href^="http"][title]:empty::before{
+            content:attr(title);
+        }
+        &:hover,&:focus{
+            border-bottom:1px solid #03a9f4;
+        }
     }
 }
 

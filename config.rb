@@ -18,16 +18,13 @@ activate :similar
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 
- # Blog settings
 activate :blog do |blog|
-    blog.prefix = 'blog'
     blog.default_extension = '.md'
     blog.sources = 'articles/:title.html'
     blog.permalink = ':year/:title.html'
     blog.layout = 'template/article'
     blog.tag_template = 'blog/template/tag.html'
     blog.calendar_template = 'blog/template/calender.html'
-    blog.name = 'RT狂の思考ログ'
     blog.paginate = false
 end
 

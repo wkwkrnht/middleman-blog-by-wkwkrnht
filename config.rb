@@ -19,6 +19,7 @@ activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
 
 activate :blog do |blog|
+    blog.prefix = 'blog'
     blog.default_extension = '.md'
     blog.sources = 'articles/:title.html'
     blog.permalink = ':year/:title.html'

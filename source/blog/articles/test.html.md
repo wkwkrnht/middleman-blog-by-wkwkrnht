@@ -3,6 +3,7 @@ title: test
 date: 2017/01/01
 tags: hello, world, hello_world, test
 author: wkwkrnht
+eyecatch: fb-wall.jpg
 ---
 
 1. TOC

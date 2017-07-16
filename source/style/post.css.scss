@@ -181,13 +181,6 @@ article{
         word-wrap:break-word;
     }
 }
-.article-main iframe[src*="youtu.be"],
-.article-main iframe[src*="youtube.com"],
-.article-main iframe[src*="www.youtube.com"]{
-    height:calc(80vw / 100 * 56.25);
-    margin:4vh auto;
-    width:80vw;
-}
 .article-main * iframe[src*="youtu.be"],
 .article-main * iframe[src*="youtube.com"],
 .article-main * iframe[src*="www.youtube.com"]{
@@ -284,4 +277,13 @@ article{
 .article-main a[href*=".gif"]{
     display:block;
     margin:2vh auto;
+}
+
+/*
+Support Edge & IE
+*/
+@supports (-ms-ime-align:auto) {
+    .article-header{
+        height:640px;
+    }
 }

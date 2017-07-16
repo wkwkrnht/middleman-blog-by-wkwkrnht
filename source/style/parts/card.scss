@@ -21,11 +21,11 @@
 .card-img,.card-meta{
     bottom:0;
     position:absolute;
+    width:29vmax;
 }
 .card-img{
     height:29vmax;
     transition-duration:.3s;
-    width:29vmax;
     &:hover{
         transform:scale(1.1);
     	transition-duration:.3s;
@@ -34,7 +34,6 @@
 .card-meta{
     background-color:rgba(0,0,0,.5);
     height:calc(29vmax / 10 * 4);
-    width:29vmax;
     & > h2{
         overflow:hidden;
         text-align:center;
@@ -77,8 +76,17 @@ Support Edge & IE
 @supports (-ms-ime-align:auto) {
     .mini-card{
         height:12em;
-        margin:3em auto;
+        margin:3em;
         width:12em;
+    }
+    .card-img,.card-meta{
+        width:inherit;
+    }
+    .card-img{
+        height:inherit;
+    }
+    .card-meta{
+        height:calc(12em * 0.4);
     }
     .big-card{
         margin:4em auto;

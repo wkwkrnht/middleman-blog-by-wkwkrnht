@@ -55,7 +55,7 @@
     box-sizing:border-box;
     padding:0 0 1em;
     margin:6vh auto;
-    max-width:96vw;
+    max-width:96%;
     & > h2{
         background-color:#03a9f4;
         color:#fff;
@@ -68,5 +68,19 @@
     }
     & ul{
         list-style-type:none;
+    }
+}
+
+/*
+Support Edge & IE
+*/
+@supports (-ms-ime-align:auto) {
+    .mini-card{
+        height:12em;
+        margin:3em auto;
+        width:12em;
+    }
+    .big-card{
+        margin:4em auto;
     }
 }

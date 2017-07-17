@@ -23,8 +23,8 @@ activate :blog do |blog|
     blog.sources = 'blog/articles/:title.html'
     blog.permalink = ':year/:title.html'
     blog.layout = 'template/article'
-    blog.tag_template = 'blog/template/tag.html'
-    blog.calendar_template = 'blog/template/calender.html'
+    blog.tag_template = 'template/tag.html'
+    blog.calendar_template = 'template/calender.html'
     blog.paginate = false
 end
 

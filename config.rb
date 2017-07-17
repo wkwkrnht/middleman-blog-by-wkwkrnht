@@ -4,6 +4,7 @@ require 'slim'
 Time.zone = 'Tokyo'
 
 set :layout, :_auto_layout
+set :layouts_dir, 'template'
 set :images_dir, 'img'
 set :css_dir, 'style'
 set :js_dir, 'script'
@@ -22,8 +23,8 @@ activate :blog do |blog|
     blog.sources = 'blog/articles/:title.html'
     blog.permalink = ':year/:title.html'
     blog.layout = 'template/article'
-    blog.tag_template = 'template/tag'
-    blog.calendar_template = 'template/calender'
+    blog.tag_template = 'asset/tag'
+    blog.calendar_template = 'asset/calender'
     blog.paginate = false
 end
 

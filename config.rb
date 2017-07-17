@@ -4,7 +4,6 @@ require 'slim'
 Time.zone = 'Tokyo'
 
 set :layout, :_auto_layout
-set :layouts_dir, 'template'
 set :images_dir, 'img'
 set :css_dir, 'style'
 set :js_dir, 'script'

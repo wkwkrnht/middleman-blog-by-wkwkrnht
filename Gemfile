@@ -9,7 +9,7 @@ gem 'nokogiri', '>=1.8.0'
 gem 'builder', '>=3.2.0'
 
 gem 'middleman', '>=4.2.1'
-gem 'middleman-blog', '>=4.0.2'
+gem 'middleman-blog', github: 'middleman/middleman-blog', branch: 'master'
 gem 'middleman-blog-similar', '>=2.0.1'
 gem 'middleman-minify-html', '>=3.4.1'
 gem 'middleman-syntax', '>=3.0.0'

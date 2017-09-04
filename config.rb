@@ -17,7 +17,6 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 activate :similar
 activate :automatic_image_sizes
 activate :syntax, :line_numbers => true
-activate :sitemap, :hostname => 'https://middleman-by-wkwkrnht.netlify.com'
 
 activate :blog do |blog|
     blog.default_extension = '.md'

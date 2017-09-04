@@ -18,7 +18,7 @@ html lang='ja'
         meta property='fb:app_id' content=data.site.facebookID
         meta property='og:type' content='article'
         meta property='og:title' content='#{site_title}'
-        meta property='og:url' content='#{base_url}'
+        meta property='og:url'  content='#{base_url}'
         meta property='og:description' content='#{description}'
         meta property='og:site_name' content='#{site_title}'
         meta property='og:image' content='#{meta_img}'
@@ -30,7 +30,8 @@ html lang='ja'
         meta name='twitter:site' content=data.site.twitterID
         link rel='fluid-icon' href='#{meta_img}' title='#{site_title}'
         link rel='image_src' href='#{meta_img}' url='#{meta_img}' height="256" width="256"
-        title == site_title
+        title
+            == site_title
         script type='application/ld+json'
             |{
             |    "@context": "http://schema.org",
@@ -68,11 +69,11 @@ html lang='ja'
                 | &copy;
                 == site_title
         main.card-list
-            - page_articles.each_with_index do |article, i|
+            - page_articles.each_with_index do |article, i| 
                 = link_to URI.encode(article.url), :class=>'mini-card', :title=>article.title, :tabindex=>'0' do
                     = image_tag article.data.eyecatch || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                     div.card-meta
                         h2
                             = article.title 
                         time
-                        = article.date.strftime('%Y-%m-%d')
+                            = article.date.strftime('%Y-%m-%d')

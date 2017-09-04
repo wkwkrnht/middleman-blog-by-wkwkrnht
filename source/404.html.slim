@@ -66,9 +66,9 @@ html
             h1.site-title
                 = title
             a.copyright href='/'
-                == first_post_year
+                = first_post_year
                 | &copy;
-                == site_title
+                = site_title
         main
             section class='big-card keyword-search'
                 h2
@@ -83,7 +83,7 @@ html
                 ul.tag-cloud
                     - blog.tags.each_key do |tag|
                         li
-                            == link_to tag, tag_path(tag), :title=>tag, :tabindex=>'0'
+                            = link_to tag, tag_path(tag), :title=>tag, :tabindex=>'0'
             section class='big-card date-search'
                 h2
                     | 日時で検索
@@ -92,14 +92,14 @@ html
                         li
                             h3
                                 = link_to blog_year_path(year) do
-                                    ==year
+                                    = year
                                     | 年
                             ul
                                 li
                                     - articles_year.group_by {|a| a.date.month }.each do |month, articles_month|
                                         h4
                                             = link_to blog_year_path(month) do
-                                                == month
+                                                = month
                                                 | 月
                                         ul.card-list
                                             - articles_month.each do |article|
@@ -108,6 +108,6 @@ html
                                                         = image_tag article.metadata[:locals]['eyecatch'] || '/img/no-img/512X512.png', :alt=>'eyecatch', :class=>'card-img'
                                                         .card-meta
                                                             h5
-                                                                == article.title
+                                                                = article.title
                                                             time
                                                                 = article.date.strftime('%Y-%m-%d')

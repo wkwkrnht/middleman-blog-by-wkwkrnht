@@ -25,7 +25,6 @@ activate :blog do |blog|
     blog.layout = 'template/article'
     blog.tag_template = 'asset/tag'
     blog.calendar_template = 'asset/calender'
-    blog.paginate = false
 end
 
 activate :sitemap_ping do |config|

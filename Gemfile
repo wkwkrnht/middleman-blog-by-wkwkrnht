@@ -15,5 +15,3 @@ gem 'middleman-minify-html', '>=3.4.1'
 gem 'middleman-syntax', '>=3.0.0'
 gem 'middleman-robots', '>=1.3.2'
 gem 'middleman-sitemap-ping', '>=1.0.0'
-
-gem 'html-proofer', '>=3.7.0'

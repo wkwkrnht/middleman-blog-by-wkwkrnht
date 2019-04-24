@@ -1,22 +1,43 @@
 # middleman-by-wkwkrnht
 
-Please note, this is made for netlify.
+Please note, this is optimized for blog on Netlify.
 
 ## Features
 
-* INCLUDE
-* USE loadCSS.js
-* OPTIMIZE to blog
-* STYLE witten by SCSS
+* TEMPLATED by slim
+
+    * list
+
+        * normal
+        * by tag
+        * by date
+
+    * article
+    * 404
+
+* STYLED by SCSS
 
     * list.css(index OR tag OR calender)
     * post.css(blog pages)
     * 404.css(ONLY 404)
+    * parts also...
+
+        * sns share button
+        * site header
+        * tag cloud
+        * related articles
+        * article card
+
 
 * INCLUDE theese
 
-    * netlify.toml
     * .ruby-version
+    * config files
+
+        * site.yml
+        * author.yml
+        * netlify.toml
+
     * automation build
 
         * robots.txt(by plugin)
@@ -24,9 +45,11 @@ Please note, this is made for netlify.
         * index.html(by middleman)
         * 404.html(by middleman)
 
+    * Netlify CMS
 
-* ENABLED
+* How to speed up
 
+    * loadCSS.js
     * gzip
     * MINIFY
 
@@ -35,6 +58,5 @@ Please note, this is made for netlify.
         * javascript
 
 
-* etc...
 
 ##etc...

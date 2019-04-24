@@ -9,35 +9,23 @@ article{
 }
 .article-header{
     box-sizing:border-box;
-    height:40vmax;
-    position:relative;
     overflow:hidden;
+    padding-bottom:2vh;
     width:100%;
 }
-.article-eyecatch,.article-meta,.article-date,.article-author{
+.article-eyecatch,.article-title,.article-meta,.article-date,.article-author{
     display:inline-block;
 }
 .article-eyecatch,.article-meta{
-    position:absolute;
     width:100%;
 }
-.article-eyecatch{
-    top:0;
-}
-.article-meta{
-    background-color:rgba(0,0,0,.5);
-    bottom:0;
-    box-sizing:border-box;
-    color:#fff;
-    height:100%;
-    padding:1vh 2vh;
-}
-.article-title,.article-meta > div{
+.article-title,.article-meta{
     width:100%;
 }
 .article-date,.article-author{
     width:49%;
 }
+
 .article-footer{
     margin:6vh 0 0;
     & > *{
@@ -47,7 +35,7 @@ article{
         background-color:#03a9f4;
         color:#fff;
         display:block;
-        font-size:1.8rem;
+        font-size:em;
         margin:0;
         padding:2vh 0;
         text-align:center;
@@ -56,11 +44,10 @@ article{
 }
 
 .article-main{
-    font-size:1.6rem;
     & #markdown-toc{
         background-color:#fff;
         box-shadow:0 0 3vmin rgba(0,0,0,.2);
-        font-size:1.7rem;
+        font-size:1.1em;
         margin:4vh auto;
         padding:2vh;
         width:86%;
@@ -69,7 +56,7 @@ article{
             color:#fff;
             content:"目次";
             display:inline-block;
-            font-size:2rem;
+            font-size:1.4em;
             margin:0 0 2vh;
             padding:.5em 0;
             text-align:center;
@@ -82,7 +69,7 @@ article{
     }
     & p{
         margin:2vh auto;
-        max-width:calc(1.6rem * 46);
+        max-width:calc(1em * 46);
         padding:1vh .5vh;
     }
     & a{
@@ -106,7 +93,7 @@ article{
     text-align:center;
 }
 .article-main h3,.article-main h4,.article-main h5,.article-main h6{
-    font-size:2rem;
+    font-size:1.4em;
 }
 .article-main h1{
     background-color:#f4f4f4;
@@ -181,9 +168,9 @@ article{
         word-wrap:break-word;
     }
 }
-.article-main * iframe[src*="youtu.be"],
-.article-main * iframe[src*="youtube.com"],
-.article-main * iframe[src*="www.youtube.com"]{
+.article-main iframe[src*="youtu.be"],
+.article-main iframe[src*="youtube.com"],
+.article-main iframe[src*="www.youtube.com"]{
     height:calc(80vw / 100 * 56.25);
     margin:4vh 0;
     max-height:calc(720px / 100 * 56.25);

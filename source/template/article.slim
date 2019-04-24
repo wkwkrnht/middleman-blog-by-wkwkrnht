@@ -80,20 +80,19 @@ html lang='ja'
         article
             header.article-header
                 = image_tag current_page.data.eyecatch || '/img/no-img/full.png', :alt=>'eyecatch', :class=>'article-eyecatch'
+                h1.article-title
+                    == current_page.title
                 .article-meta
-                    h1.article-title
-                        == current_page.title
-                    div
-                        time.article-date
-                            == date
-                        span.article-author
-                            == author
-                    - if current_page.tags.present?
-                        ul.tag-cloud
-                            - current_page.tags.each do |tag|
-                                li
-                                    == link_to tag, tag_path(tag)
-            .article-main role='main'
+                    time.article-date
+                        == date
+                    span.article-author
+                        == author
+                - if current_page.tags.present?
+                    ul.tag-cloud
+                        - current_page.tags.each do |tag|
+                            li
+                                == link_to tag, tag_path(tag)
+            main.article-main role='main'
                 == yield
             footer.article-footer
                 ul.share-button
@@ -187,8 +186,8 @@ html lang='ja'
                                         = article.date.strftime('%Y-%m-%d')
         javascript:
             document.getElementById("nativeShare").onclick = function(){
-                var title = document.title;
-                var text = document.getElementsByName('description').item(0).content;
-                var url = window.location.href;
+                let title = document.title;
+                let text = document.getElementsByName('description').item(0).content;
+                let url = window.location.href;
                 navigator.share({title: title, text: text, url: url}).catch(function(error){console.error('Error sharing: ' + error)});
             };
